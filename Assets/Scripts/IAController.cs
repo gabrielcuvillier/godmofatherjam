@@ -1,18 +1,18 @@
+using NUnit.Framework;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class IAController : MonoBehaviour
 {
-    private enum EIAState
+    public enum EIAState
     {
         Idle,
         Chase,
-        Attack
+        Attack,
+        Dead
     }
 
-    [SerializeField] private EIAState currentState;
     private Rigidbody rb;
-
     [SerializeField] private Transform target;
     public Transform Target
     {
@@ -21,14 +21,27 @@ public class IAController : MonoBehaviour
     }
 
     [Header("IA Settings")]
+    [SerializeField] private EIAState currentState;
+    public EIAState CurrentState
+    {
+        get { return currentState; }
+        set { currentState = value; }
+    }
     [SerializeField] private float attackRange;
     [SerializeField] private float movementSpeed;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float attackDamage;
 
+    private float attackCooldown;
+    private float attackTimer;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        attackCooldown = 1f / attackSpeed;
+        attackTimer = 0f;
     }
 
     void Update()
@@ -45,21 +58,55 @@ public class IAController : MonoBehaviour
                 Attack();
                 break;
         }
+
+        // Debug 
+        Debug.DrawLine(transform.position, target.position, Color.red);
+
+        // Draw attack range circle
+        int segments = 32;
+        float angleStep = 360f / segments;
+        Vector3 prevPoint = transform.position + new Vector3(attackRange, 0, 0);
+        for (int i = 1; i <= segments; i++)
+        {
+            float angle = angleStep * i * Mathf.Deg2Rad;
+            Vector3 nextPoint = transform.position + new Vector3(Mathf.Cos(angle) * attackRange, 0, Mathf.Sin(angle) * attackRange);
+            Debug.DrawLine(prevPoint, nextPoint, Color.yellow);
+            prevPoint = nextPoint;
+        }
     }
 
     private void Move()
     {
+        if (target != null && IsTargetInRange())
+        {
+            currentState = EIAState.Attack;
+            return;
+        }
         Vector3 direction = GetDirectionToTarget();
         if (direction != Vector3.zero)
         {
             rb.MovePosition(rb.position + direction * movementSpeed * Time.deltaTime);
-            Debug.Log("Moving towards target");
         }
     }
 
     private void Attack()
     {
+        if (target != null && attackTimer >= attackCooldown)
+        {
+            attackTimer = 0f;
 
+            // Jouer l'attaque
+            Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
+        }
+        else
+        {
+            attackTimer += Time.deltaTime;
+
+            if (!IsTargetInRange())
+            {
+                currentState = EIAState.Chase;
+            }
+        }
     }
 
     private Vector3 GetDirectionToTarget()
@@ -69,6 +116,16 @@ public class IAController : MonoBehaviour
             return (target.position - transform.position).normalized;
         }
         return Vector3.zero;
+    }
+
+    private bool IsTargetInRange()
+    {
+        if (target != null)
+        {
+            float distance = Vector3.Distance(transform.position, target.position);
+            return distance <= attackRange;
+        }
+        return false;
     }
 
 }
