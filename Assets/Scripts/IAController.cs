@@ -113,7 +113,7 @@ public class IAController : MonoBehaviour
             attackTimer = 0f;
 
             // Jouer l'attaque
-            Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
+            //Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
             targetHealth?.TakeDamage(attackDamage);
         }
         else
