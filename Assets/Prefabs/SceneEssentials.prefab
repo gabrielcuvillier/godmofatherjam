@@ -1553,10 +1553,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6638544557711620482, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
-      propertyPath: _onHealthChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5198122351062937140}
-    - target: {fileID: 6638544557711620482, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
       propertyPath: _onHealthChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1572,6 +1568,10 @@ PrefabInstance:
       propertyPath: _onHealthChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6752162277414830609, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 8835111822953399096}
     - target: {fileID: 8558494195804283655, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
       propertyPath: m_Name
       value: Treasure
@@ -1579,34 +1579,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8558494195804283655, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5198122351062937140}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
 --- !u!4 &1853379572011279675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 183413022238569581, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
   m_PrefabInstance: {fileID: 1959940820086247766}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7923796481548448337 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8558494195804283655, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
-  m_PrefabInstance: {fileID: 1959940820086247766}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5198122351062937140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923796481548448337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b017d48251c1f0a428f841867e656912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Treasure
-  healthBar: {fileID: 8835111822953399096}
 --- !u!1001 &2998907204085211696
 PrefabInstance:
   m_ObjectHideFlags: 0
