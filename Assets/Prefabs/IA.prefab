@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1567897177180842209}
   - component: {fileID: 4751070319796361834}
+  - component: {fileID: 1744905284291361265}
   - component: {fileID: 2146440383042844639}
   - component: {fileID: 5336622330820145373}
   - component: {fileID: 7524238910497917233}
   - component: {fileID: 4086426482285862319}
   m_Layer: 0
   m_Name: IA
-  m_TagString: Monster
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +55,37 @@ MonoBehaviour:
   movementSpeed: 3
   attackSpeed: 1
   attackDamage: 10
+--- !u!114 &1744905284291361265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596253740001129157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49845b48a1e493b4ea66dab8368b9c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  _maxHealth: 10
+  _onHealthChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4751070319796361834}
+        m_TargetAssemblyTypeName: IAController, Assembly-CSharp
+        m_MethodName: Death
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &2146440383042844639
 MeshFilter:
   m_ObjectHideFlags: 0

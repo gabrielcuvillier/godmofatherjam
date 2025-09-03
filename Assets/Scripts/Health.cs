@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] float _maxHealth = 3f;
 
     //Old health value / New health value
-    public event Action<float,float> OnHealthChange;
+    public event Action<float, float> OnHealthChange;
     public event Action OnDeath;
 
     [SerializeField] UnityEvent _onHealthChangeEvent;
@@ -20,14 +20,14 @@ public class Health : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
-    public void TakeDamage (float damage)
+    public void TakeDamage(float damage)
     {
         float newHealth = Mathf.Max(_currentHealth - damage, 0f);
         OnHealthChange?.Invoke(_currentHealth, newHealth);
         _onHealthChangeEvent.Invoke();
         _currentHealth = newHealth;
 
-        if (_currentHealth < 0f)
+        if (_currentHealth <= 0f)
         {
             OnDeath?.Invoke();
             _onDeathEvent.Invoke();

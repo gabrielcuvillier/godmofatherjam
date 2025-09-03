@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float lifetime;
+    [SerializeField] private int damage;
     private Rigidbody rb;
 
     void Awake()
@@ -30,7 +31,13 @@ public class BulletController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("TODO Enemy hit");
+            SetDamage(collision.gameObject.GetComponent<Health>());
         }
+    }
+
+    private void SetDamage(Health health)
+    {
+        health.TakeDamage(damage);
     }
 
 }
