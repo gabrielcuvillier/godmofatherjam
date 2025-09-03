@@ -52,7 +52,7 @@ public class IAController : MonoBehaviour
     {
         if (target != null)
         {
-            targetHealth = target.gameObject.GetComponent<Health>();
+            targetHealth = target.transform.parent.GetComponent<Health>();
         }
     }
 
@@ -118,6 +118,7 @@ public class IAController : MonoBehaviour
             // Jouer l'attaque
             //Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
             targetHealth?.TakeDamage(attackDamage);
+
         }
         else
         {
