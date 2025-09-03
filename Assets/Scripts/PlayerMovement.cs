@@ -13,17 +13,19 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Speeds")]
     [SerializeField] float _playerSpeed = 30f;
-    [SerializeField] Vector2 _cameraRotationSpeed = new Vector2(30f,30f);
+    [SerializeField] Vector2 _cameraRotationSpeed = new Vector2(30f, 30f);
 
     private void OnEnable()
     {
         _actions = new PlayerInputsActions();
         _actions.Player.Enable();
+        DisableCursor();
     }
 
     private void OnDisable()
     {
         _actions.Player.Disable();
+        EnableCursor();
     }
 
     private void Update()
@@ -49,7 +51,19 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forward = transform.forward;
         Vector3 right = transform.right;
         Vector3 direction = forward * inputDirection.y + right * inputDirection.x;
-        
+
         _rigidbody.linearVelocity = direction * _playerSpeed + new Vector3(0f, _rigidbody.linearVelocity.y, 0f);
+    }
+
+    void EnableCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    void DisableCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
