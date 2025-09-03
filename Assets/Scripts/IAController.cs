@@ -13,6 +13,7 @@ public class IAController : MonoBehaviour
     }
 
     private Rigidbody rb;
+    private Health targetHealth;
     [SerializeField] private Transform target;
     public Transform Target
     {
@@ -42,6 +43,14 @@ public class IAController : MonoBehaviour
 
         attackCooldown = 1f / attackSpeed;
         attackTimer = 0f;
+    }
+
+    private void Start()
+    {
+        if (target != null)
+        {
+            targetHealth = target.gameObject.GetComponent<Health>();
+        }
     }
 
     void Update()
@@ -97,6 +106,7 @@ public class IAController : MonoBehaviour
 
             // Jouer l'attaque
             Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
+            targetHealth?.TakeDamage(attackDamage);
         }
         else
         {
