@@ -32,6 +32,7 @@ public class BulletController : MonoBehaviour
         {
             Debug.Log("TODO Enemy hit");
             SetDamage(collision.gameObject.GetComponent<Health>());
+            Destroy(gameObject);
         }
     }
 

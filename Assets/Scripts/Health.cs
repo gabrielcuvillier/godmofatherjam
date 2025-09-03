@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
             OnDeath?.Invoke();
             _onDeathEvent.Invoke();
         }
-        Debug.Log($"Damage on {gameObject.name}, current health : {_currentHealth}");
+        //Debug.Log($"Damage on {gameObject.name}, current health : {_currentHealth}");
     }
 
     public void Heal(float healValue)

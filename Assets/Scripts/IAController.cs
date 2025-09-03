@@ -71,6 +71,8 @@ public class IAController : MonoBehaviour
                 break;
         }
 
+        UpdateRotation();
+
         // Debug 
         Debug.DrawLine(transform.position, target.position, Color.red);
 
@@ -89,6 +91,7 @@ public class IAController : MonoBehaviour
 
     public void Death()
     {
+        WaveManager.Instance.EnemyKilled();
         Destroy(gameObject);
     }
 
@@ -113,7 +116,7 @@ public class IAController : MonoBehaviour
             attackTimer = 0f;
 
             // Jouer l'attaque
-            Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
+            //Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
             targetHealth?.TakeDamage(attackDamage);
         }
         else
@@ -123,6 +126,19 @@ public class IAController : MonoBehaviour
             if (!IsTargetInRange())
             {
                 currentState = EIAState.Chase;
+            }
+        }
+    }
+
+    private void UpdateRotation()
+    {
+        if (target != null)
+        {
+            Vector3 direction = GetDirectionToTarget();
+            if (direction != Vector3.zero)
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                rb.MoveRotation(lookRotation);
             }
         }
     }
