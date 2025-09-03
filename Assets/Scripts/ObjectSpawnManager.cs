@@ -4,10 +4,12 @@ using UnityEngine.UIElements;
 
 public class ObjectSpawnManager : MonoBehaviour
 {
+    [SerializeField] Inventory _inventory;
     [SerializeField] ObjectSpawnPoint[] _spawnPoints;
     [SerializeField] ObjectWeapon[] _objectsPool;
     [SerializeField] float _minSpawnCooldown = 3f;
     [SerializeField] float _maxSpawnCooldown = 5f;
+    [SerializeField] int _nbObjectsSpawnedOnInit = 2;
 
     float _spawnCooldownDuration;
     float _currentCooldownDuration = 0f;
@@ -15,6 +17,14 @@ public class ObjectSpawnManager : MonoBehaviour
     private void Awake()
     {
         _spawnCooldownDuration = Random.Range(_minSpawnCooldown, _maxSpawnCooldown);
+    }
+
+    private void Start()
+    {
+        for (int i = 0; i < _nbObjectsSpawnedOnInit && i < _spawnPoints.Length; i++)
+        {
+            SpawnObject();
+        }
     }
 
     private void Update()
@@ -50,6 +60,7 @@ public class ObjectSpawnManager : MonoBehaviour
             ObjectWeapon objectSpawnedInstance = _objectsPool[indexObjectSpawned];
             ObjectWeapon objectSpawned = Instantiate(objectSpawnedInstance, spawnPoint.transform.position, Quaternion.identity);
             objectSpawned.SetSpawnPoint(spawnPoint);
+            objectSpawned.SetInventory(_inventory);
         }
     }
 }

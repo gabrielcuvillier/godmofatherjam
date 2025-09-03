@@ -8,7 +8,7 @@ public class ObjectCollision : MonoBehaviour
         if (collision.collider.tag == "Player")
         {
             _objectWeapon?.AddObjectToInventory();
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }

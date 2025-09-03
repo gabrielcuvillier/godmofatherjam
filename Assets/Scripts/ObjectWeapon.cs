@@ -3,13 +3,18 @@ using UnityEngine;
 public class ObjectWeapon : MonoBehaviour
 {
     [SerializeField] Item _item;
-    [SerializeField] Inventory _inventory;
+    Inventory _inventory;
 
     ObjectSpawnPoint _spawnPoint;
 
     public void SetSpawnPoint(ObjectSpawnPoint spawnPoint)
     {
         _spawnPoint = spawnPoint;
+    }
+
+    public void SetInventory(Inventory inventory)
+    {
+        _inventory = inventory;
     }
 
     public void AddObjectToInventory()
