@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5494418386767843730}
   - component: {fileID: 7403322745437641573}
   - component: {fileID: 3688051927789088966}
+  - component: {fileID: 6351140830791060523}
   - component: {fileID: 2608151744068049313}
   - component: {fileID: 1632932176634037050}
   m_Layer: 0
@@ -134,6 +135,18 @@ MonoBehaviour:
   _rigidbody: {fileID: 1632932176634037050}
   _playerSpeed: 10
   _cameraRotationSpeed: {x: 200, y: 200}
+--- !u!114 &6351140830791060523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92535198363339414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee6316f35a3100478c0f5157a847928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
 --- !u!114 &2608151744068049313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +248,30 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 851c472d-9554-4bdc-8d32-bb1fe61d85a1
+    m_ActionName: 'Player/NextSlot[/Mouse/scroll/up]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f7152740-bac7-4608-b262-6e84051f2af5
+    m_ActionName: 'Player/PreviousSlot[/Mouse/scroll/down]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e79f9861-3802-4042-b543-b33dcb2f2c5f
+    m_ActionName: 'Player/SelectSlot1[/Keyboard/1]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba91b685-5b86-4606-b2e2-abac10e690aa
+    m_ActionName: 'Player/SelectSlot2[/Keyboard/2]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: db3d9d3a-15e3-443d-b451-f72b33a5569e
+    m_ActionName: Player/SelectSlot3
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e5fcfd66-75b2-40c8-91fc-b747a93b8e9b
+    m_ActionName: Player/SelectSlot14
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 

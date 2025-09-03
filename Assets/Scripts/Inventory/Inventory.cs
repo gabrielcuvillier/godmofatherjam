@@ -97,12 +97,14 @@ public class Inventory : MonoBehaviour
     [ContextMenu("Next Slot")]
     public void NextSlot()
     {
-        ModifyCurrentSlot(1);
+        Debug.Log("NextSlot");
+        ModifyCurrentSlot(-1);
     }
 
     [ContextMenu("Previous Slot")]
     public void PreviousSlot()
     {
-        ModifyCurrentSlot(-1);
+        Debug.Log("PreviousSlot");
+        ModifyCurrentSlot(1);
     }
 }
