@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Health))]
 public class IAController : MonoBehaviour
 {
     public enum EIAState
@@ -13,6 +14,7 @@ public class IAController : MonoBehaviour
     }
 
     private Rigidbody rb;
+    private Health health;
     private Health targetHealth;
     [SerializeField] private Transform target;
     public Transform Target
@@ -40,6 +42,7 @@ public class IAController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        health = GetComponent<Health>();
 
         attackCooldown = 1f / attackSpeed;
         attackTimer = 0f;
@@ -82,6 +85,11 @@ public class IAController : MonoBehaviour
             Debug.DrawLine(prevPoint, nextPoint, Color.yellow);
             prevPoint = nextPoint;
         }
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 
     private void Move()
