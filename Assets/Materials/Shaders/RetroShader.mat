@@ -38,7 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorResolution: 10
-    - _ColorTransition: 1
+    - _ColorTransition: 0
     - _DitherSpread: 0
     - _QuantizationDivision: 0.00000001
     - _QuantizationLevel: 0.0001
