@@ -48,14 +48,60 @@ public class Inventory : MonoBehaviour
         slots[currentIndexSlot].SetIsTarget(true);
     }
 
+    private bool IsInventoryFull()
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.Item == itemEmpty)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool AddItem(Item newItem)
+    {
+        if (IsInventoryFull())
+        {
+            Debug.LogWarning("Inventaire plein !");
+            return false;
+        }
+
+        // Ajouter l'élément à l'emplacement vide
+        foreach (var slot in slots)
+        {
+            if (slot.Item == itemEmpty)
+            {
+                slot.SetItem(newItem);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void SelectItem(int index)
+    {
+        if (index < 0 || index >= slots.Count)
+        {
+            Debug.LogError("Index de slot invalide !");
+            return;
+        }
+
+        slots[currentIndexSlot].SetIsTarget(false);
+        currentIndexSlot = index;
+        slots[currentIndexSlot].SetIsTarget(true);
+    }
+
     [ContextMenu("Next Slot")]
-    private void NextSlot()
+    public void NextSlot()
     {
         ModifyCurrentSlot(1);
     }
 
     [ContextMenu("Previous Slot")]
-    private void PreviousSlot()
+    public void PreviousSlot()
     {
         ModifyCurrentSlot(-1);
     }

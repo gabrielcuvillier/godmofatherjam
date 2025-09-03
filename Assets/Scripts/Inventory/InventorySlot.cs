@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class InventorySlot : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class InventorySlot : MonoBehaviour
 
     [SerializeField] private Image image;
     [SerializeField] private Image imageContour;
+    [SerializeField] private TextMeshProUGUI textCount;
 
     public void SetItem(Item newItem)
     {
@@ -24,6 +26,18 @@ public class InventorySlot : MonoBehaviour
         if (image != null && item != null)
         {
             image.sprite = item.Sprite;
+        }
+
+        if (textCount != null && item != null)
+        {
+            if (item.CountMax > 1)
+            {
+                textCount.text = item.Count.ToString();
+            }
+            else
+            {
+                textCount.enabled = false;
+            }
         }
     }
 
