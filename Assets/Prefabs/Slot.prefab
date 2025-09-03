@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c4bc97879df1a4c85c885ef7115ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
-  image: {fileID: 6477980650849309255}
+  image: {fileID: 1388736532294224291}
   imageContour: {fileID: 714081162194993786}
   textCount: {fileID: 4265951669528886639}
 --- !u!114 &6531464566101750112
