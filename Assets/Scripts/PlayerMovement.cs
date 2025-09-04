@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         GameManager.Instance.DisableCursor();
+        Time.timeScale = 1f;
     }
 
     private void Update()
