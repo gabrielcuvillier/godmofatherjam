@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MinimapIcon
+  m_Name: Minimap Sand
   m_Shader: {fileID: -6465566751694194690, guid: c145fc25042c3ed4aa7de16dfe897643, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -45,7 +45,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.93385124, b: 0.53144646, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &979739928181100863
