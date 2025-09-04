@@ -19,13 +19,17 @@ public class PlayerMovement : MonoBehaviour
     {
         _actions = new PlayerInputsActions();
         _actions.Player.Enable();
-        DisableCursor();
     }
 
     private void OnDisable()
     {
         _actions.Player.Disable();
-        EnableCursor();
+    }
+
+    void Start()
+    {
+        GameManager.Instance.DisableCursor();
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -53,17 +57,5 @@ public class PlayerMovement : MonoBehaviour
         Vector3 direction = forward * inputDirection.y + right * inputDirection.x;
 
         _rigidbody.linearVelocity = direction * _playerSpeed + new Vector3(0f, _rigidbody.linearVelocity.y, 0f);
-    }
-
-    void EnableCursor()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    void DisableCursor()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 }
