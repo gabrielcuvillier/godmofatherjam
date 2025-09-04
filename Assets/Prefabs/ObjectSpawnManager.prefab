@@ -52,6 +52,7 @@ MonoBehaviour:
   _objectsPool:
   - {fileID: 8337270804157759812, guid: 8aa6eede794548b4fb598e2d6c2fe7d0, type: 3}
   - {fileID: 479943439037780050, guid: d508b49ba9cb4df4a91469111305230a, type: 3}
+  - {fileID: 479943439037780050, guid: 9602df48e545ebc45aca3281d27d92d2, type: 3}
   _minSpawnCooldown: 3
   _maxSpawnCooldown: 10
   _nbObjectsSpawnedOnInit: 2
