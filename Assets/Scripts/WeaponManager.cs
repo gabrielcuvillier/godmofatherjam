@@ -9,12 +9,8 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Inventory _inventory;
     [SerializeField] PlayerInputs _playerInputs;
 
-    [Header("Link item/weapon")]
-    [SerializeField] List<Item> _itemEntries;
-    [SerializeField] List<WeaponUsage> _weaponEntries;
-
     int _currentSlotIndex = 0;
-    WeaponUsage _currentWeapon;
+    WeaponUsage _currentWeapon = null;
     public WeaponUsage CurrentWeapon => _currentWeapon;
 
     private void Start()
@@ -31,6 +27,7 @@ public class WeaponManager : MonoBehaviour
         {
             CurrentWeapon.Use();
             _inventory.RemoveItem(_currentSlotIndex);
+            _currentWeapon = null;
             OnAttackEvent.Invoke();
         }
     }
@@ -41,18 +38,13 @@ public class WeaponManager : MonoBehaviour
         _currentSlotIndex = slotIndex;
         if (item != _inventory.EmptyItem)
         {
-            int indexWeapon = _itemEntries.IndexOf(item);
-            if (_weaponEntries != null && _weaponEntries.Count > indexWeapon)
-            {
-                WeaponUsage newWeapon = _weaponEntries[indexWeapon];
-                newWeapon.gameObject.SetActive(true);
-                newWeapon.Select();
-                _currentWeapon = newWeapon;
-            }
-            else
-            {
-                Debug.LogWarning("Weapon entries is not initialized as wanted.");
-            }
+            WeaponUsage newWeapon = _inventory.GetWeaponForItem(slotIndex);
+            newWeapon.gameObject.SetActive(true);
+            newWeapon.Select();
+            _currentWeapon = newWeapon;
+        } else
+        {
+            _currentWeapon = null;
         }
     }
 

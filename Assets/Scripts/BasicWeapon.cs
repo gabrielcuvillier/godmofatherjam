@@ -3,28 +3,38 @@ using UnityEngine;
 
 public class BasicWeapon : WeaponUsage
 {
-    [SerializeField] private Transform shotPoint;
+    private GameObject _parent;
     [SerializeField] private Rigidbody rb;
-    Vector3 direction;
+    Coroutine _coroutineMove;
 
-    private void Awake()
+    public override void DestroyWeapon()
     {
-        direction = shotPoint.forward;
+        if (_coroutineMove != null) 
+        {
+            StopCoroutine(_coroutineMove);
+            _coroutineMove = null;
+        }
     }
+
+    public override void Initialize(GameObject parent)
+    {
+        _parent = parent;
+    }
+
     public override void Use()
     {
-        Move();
-        StartCoroutine(DestroyAfterTime());
+        _coroutineMove = StartCoroutine(Move());
     }
 
-    public void Move()
+    private IEnumerator Move()
     {
-        rb.linearVelocity = direction * speed;
-    }
-
-    private IEnumerator DestroyAfterTime()
-    {
-        yield return new WaitForSeconds(lifetime);
+        float timer = 0f;
+        while (timer < lifetime)
+        {
+            transform.position += _parent.transform.forward * speed * Time.deltaTime;
+            yield return null;
+            timer += Time.deltaTime;
+        }
         Destroy(gameObject);
     }
 }

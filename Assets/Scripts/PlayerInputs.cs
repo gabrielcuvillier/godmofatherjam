@@ -21,10 +21,17 @@ public class PlayerInputs : MonoBehaviour
     {
         _actions = new PlayerInputsActions();
         _actions.Player.Enable();
+        _actions.Player.Attack.started += OnAttackInput;
+    }
+
+    private void OnAttackInput(InputAction.CallbackContext obj)
+    {
+        OnAttack?.Invoke();
     }
 
     private void OnDisable()
     {
+        _actions.Player.Attack.started -= OnAttackInput;
         _actions.Player.Disable();
     }
 

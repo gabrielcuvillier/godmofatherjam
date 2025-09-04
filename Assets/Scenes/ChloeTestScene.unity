@@ -119,42 +119,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &742650801 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7029858449021848131, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+--- !u!1 &1068005364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5043961887974832563, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
   m_PrefabInstance: {fileID: 2019750305615928055}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1266454855
+--- !u!1 &1266454855 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2326545247205933662, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+  m_PrefabInstance: {fileID: 2019750305615928055}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1266454856}
-  m_Layer: 0
-  m_Name: WeaponPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1266454856
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266454855}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.323, y: -0.248, z: 0.402}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.40668}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 742650801}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1344183554 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6403221024166097835, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
@@ -313,6 +287,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 756370433418860505, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: _ShotPoint
+      value: 
+      objectReference: {fileID: 1068005364}
+    - target: {fileID: 756370433418860505, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: _weaponParent
+      value: 
+      objectReference: {fileID: 1266454855}
     - target: {fileID: 1079430210752456592, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -353,6 +335,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 8400000, guid: d0951d6eb1f80284296e0f09abff2ebd, type: 2}
+    - target: {fileID: 5043961887974832563, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5504125325224974854, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
       propertyPath: rb
       value: 
@@ -407,10 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7029858449021848131, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1266454856}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
 --- !u!1660057539 &9223372036854775807

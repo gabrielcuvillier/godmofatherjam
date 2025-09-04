@@ -13,6 +13,8 @@ public abstract class WeaponUsage : MonoBehaviour
 
     public int Damage => damage;
 
+    public virtual void Initialize(GameObject parent) { }
     public virtual void Select() { }
     public abstract void Use();
+    public abstract void DestroyWeapon();
 }

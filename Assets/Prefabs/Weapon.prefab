@@ -51,7 +51,7 @@ MonoBehaviour:
   damage: 10
   speed: 20
   lifetime: 5
-  shotPoint: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!1 &6240200571974865632
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
