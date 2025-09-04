@@ -45,10 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawnManager
   _inventory: {fileID: 0}
-  _spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _spawnPoints: []
   _objectsPool:
   - {fileID: 8337270804157759812, guid: 8aa6eede794548b4fb598e2d6c2fe7d0, type: 3}
   - {fileID: 479943439037780050, guid: d508b49ba9cb4df4a91469111305230a, type: 3}

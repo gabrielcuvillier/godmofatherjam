@@ -15,7 +15,7 @@ public class BuoyWeapon : WeaponUsage
         {
             float distanceSquared = _distanceRebound * _distanceRebound;
             float distanceEnemyWeapon = (gameObjects[i].transform.position - transform.position).sqrMagnitude;
-            if (distanceEnemyWeapon < distanceSquared)
+            if (distanceEnemyWeapon < distanceSquared && objective != this)
             {
                 objective = gameObjects[i];
             }
@@ -49,10 +49,18 @@ public class BuoyWeapon : WeaponUsage
 
     private IEnumerator MoveTowards(Transform enemy)
     {
+        Vector3 forward = transform.forward;
         float timer = 0f;
         while (timer < lifetime)
         {
-            transform.position += enemy.position * speed * Time.deltaTime;
+            if (enemy != null) 
+            { 
+                transform.position += (enemy.position - transform.position).normalized * speed * Time.deltaTime;
+            } else
+            {
+                transform.position += forward * speed * Time.deltaTime;
+            }
+
             yield return null;
             timer += Time.deltaTime;
         }
