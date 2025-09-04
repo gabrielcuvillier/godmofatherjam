@@ -71,9 +71,11 @@ MonoBehaviour:
   _itemEntries:
   - {fileID: 11400000, guid: 26a1a7f59e212ba48a55ed7681e50dfa, type: 2}
   - {fileID: 11400000, guid: 520f855e47f23f34ca8a48949915d18b, type: 2}
+  - {fileID: 11400000, guid: d7a0079ae83776d4fb23bbd7eb1160c7, type: 2}
   _weaponEntries:
   - {fileID: 5903542548757031231, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
   - {fileID: 5903542548757031231, guid: 4068b540bc4744f43a33f5d36e2146c3, type: 3}
+  - {fileID: 4948098587400756379, guid: c15536f2f54c42645bc30750dcd808eb, type: 3}
   _weaponParent: {fileID: 0}
   _ShotPoint: {fileID: 0}
 --- !u!114 &6702467915892924008

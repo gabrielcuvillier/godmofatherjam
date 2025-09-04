@@ -95,8 +95,16 @@ public class Inventory : MonoBehaviour
             if (slot.Item == itemEmpty)
             {
                 slot.SetItem(newItem);
-                
-                int indexNewItem = _itemEntries.FindIndex(item => item.name == newItem.name);
+
+                //int indexNewItem = _itemEntries.FindIndex(item => item.name == newItem.name);
+                int indexNewItem = -1;
+                for (int i = 0; i < _itemEntries.Count && indexNewItem == -1; i++)
+                {
+                    if (_itemEntries[i].name == newItem.name)
+                    {
+                        indexNewItem = i;
+                    }
+                }
                 if (_weaponEntries != null && _weaponEntries.Count > indexNewItem)
                 {
                     WeaponUsage weapon = Instantiate(_weaponEntries[indexNewItem], _weaponParent?.transform);

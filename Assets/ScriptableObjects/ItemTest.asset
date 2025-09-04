@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59a871c90bdbdd742bf2c4d8f8e311ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bf8f05580d27cd49a95ed17f56f0b17, type: 3}
   m_Name: ItemTest
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  sprite: {fileID: 21300000, guid: 3027f087ed76b8c4db9ef949bb75da0d, type: 3}
-  itemName: Baton
-  description: Oui
-  count: 1
-  countMax: 5
+  sprite: {fileID: 0}
+  itemName: 
+  description: 
+  count: 0
+  countMax: 0
