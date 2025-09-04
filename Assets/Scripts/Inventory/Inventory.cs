@@ -1,13 +1,27 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
+    public event Action<Item,int> OnItemSelected;
+    [SerializeField] UnityEvent OnItemSelectedEvent;
+    [SerializeField] UnityEvent OnItemRemovedEvent;
+
     [SerializeField] private int maxSlots = 3;
     [SerializeField] private InventorySlot slotPrefab;
     [SerializeField] private Item itemEmpty;
     private int currentIndexSlot = 0;
     private List<InventorySlot> slots = new List<InventorySlot>();
+    public Item EmptyItem => itemEmpty;
+
+    [Header("Link item/weapon")]
+    [SerializeField] List<Item> _itemEntries;
+    [SerializeField] List<WeaponUsage> _weaponEntries;
+    WeaponUsage[] _slotsWeapons;
+    [SerializeField] GameObject _weaponParent;
+    [SerializeField] GameObject _ShotPoint;
 
     void Start()
     {
@@ -30,6 +44,9 @@ public class Inventory : MonoBehaviour
         }
 
         slots[currentIndexSlot].SetIsTarget(true);
+        _slotsWeapons = new WeaponUsage[maxSlots];
+
+
     }
 
     private void ModifyCurrentSlot(int amount)
@@ -46,6 +63,9 @@ public class Inventory : MonoBehaviour
         }
 
         slots[currentIndexSlot].SetIsTarget(true);
+
+        OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
+        OnItemSelectedEvent.Invoke();
     }
 
     private bool IsInventoryFull()
@@ -69,13 +89,30 @@ public class Inventory : MonoBehaviour
         }
 
         // Ajouter l'élément à l'emplacement vide
+        int slotIndex = 0;
         foreach (var slot in slots)
         {
             if (slot.Item == itemEmpty)
             {
                 slot.SetItem(newItem);
+
+                int indexNewItem = _itemEntries.IndexOf(newItem);
+                if (_weaponEntries != null && _weaponEntries.Count > indexNewItem)
+                {
+                    WeaponUsage weapon = Instantiate(_weaponEntries[indexNewItem], _weaponParent?.transform);
+                    weapon.Initialize(_ShotPoint);
+                    _slotsWeapons[slotIndex] = weapon;
+                    if (currentIndexSlot != slotIndex)
+                    {
+                        weapon.gameObject.SetActive(false);
+                    }
+                }
+
+                OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
+                OnItemSelectedEvent.Invoke();
                 return true;
             }
+            slotIndex++;
         }
 
         return false;
@@ -92,6 +129,9 @@ public class Inventory : MonoBehaviour
         slots[currentIndexSlot].SetIsTarget(false);
         currentIndexSlot = index;
         slots[currentIndexSlot].SetIsTarget(true);
+        
+        OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
+        OnItemSelectedEvent.Invoke();
     }
 
     [ContextMenu("Next Slot")]
@@ -106,5 +146,25 @@ public class Inventory : MonoBehaviour
     {
         Debug.Log("PreviousSlot");
         ModifyCurrentSlot(1);
+    }
+
+    public void RemoveItem(int index)
+    {
+        slots[index].SetItem(itemEmpty);
+    }
+
+    public WeaponUsage GetWeaponForItem(int slotIndex)
+    {
+        int indexWeapon = slotIndex; //_itemEntries.IndexOf(item);
+        if (_slotsWeapons.Length > indexWeapon)
+        {
+            WeaponUsage newWeapon = _slotsWeapons[indexWeapon];
+            return newWeapon;
+        }
+        else
+        {
+            Debug.LogWarning("Weapon entries is not initialized as wanted.");
+            return null;
+        }
     }
 }

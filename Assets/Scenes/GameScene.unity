@@ -127,6 +127,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 783875873505859194, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 783875873505859194, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 500
     - target: {fileID: 3773852709123070961, guid: 5aafd3b7d54ced849a0e224f80da3f56, type: 3}
       propertyPath: m_Name
       value: AudioEnvironment

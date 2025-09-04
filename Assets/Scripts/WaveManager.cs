@@ -97,7 +97,7 @@ public class WaveManager : MonoBehaviour
         {
             currentEnemies++;
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-            IAController ia = Instantiate(enemySimplePrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<IAController>();
+            IABase ia = Instantiate(enemySimplePrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<IABase>();
 
             if (currentSpawnPointIndex == 0)
             {

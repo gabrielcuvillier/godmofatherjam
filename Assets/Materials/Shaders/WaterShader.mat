@@ -49,17 +49,17 @@ Material:
     - _ActivateFoamDistance: 0
     - _Float: 0
     - _Flow_Strengh: 0.0075
-    - _Foam_Distance: 40
+    - _Foam_Distance: 400
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Shore_Foam_Distance: 4
-    - _Size: 1
+    - _Shore_Foam_Distance: 1
+    - _Size: 10
     - _Wave_Intensity: 0.5
     m_Colors:
-    - _Deep_Foam_Color: {r: 0.15381107, g: 0.5047566, b: 0.6352201, a: 1}
+    - _Deep_Foam_Color: {r: 0.09333086, g: 0.6831162, b: 0.899371, a: 1}
     - _Flow_Speed: {r: 0.005, g: 0.005, b: 0, a: 0}
-    - _Foam_Color: {r: 0.7607843, g: 0.98039216, b: 1, a: 1}
-    - _Water_Color: {r: 0.13521987, g: 0.9802086, b: 1, a: 1}
+    - _Foam_Color: {r: 0.49999988, g: 0.9590163, b: 1, a: 1}
+    - _Water_Color: {r: 0.13333333, g: 0.7527501, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4749200156352418131
