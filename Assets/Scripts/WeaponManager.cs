@@ -58,7 +58,9 @@ public class WeaponManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        _inventory.OnItemSelected -= OnItemSelected;
-        _playerInputs.OnAttack -= OnAttack;
+        if (_inventory != null)
+            _inventory.OnItemSelected -= OnItemSelected;
+        if (_playerInputs != null)
+            _playerInputs.OnAttack -= OnAttack;
     }
 }
