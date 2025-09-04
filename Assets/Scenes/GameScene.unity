@@ -215,6 +215,14 @@ PrefabInstance:
       propertyPath: maxEnemies
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: requinPerWave
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: skeletonPerWave
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
