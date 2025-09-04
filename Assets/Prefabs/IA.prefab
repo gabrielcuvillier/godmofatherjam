@@ -86,7 +86,7 @@ MonoBehaviour:
   attackRange: 5
   movementSpeed: 3
   attackSpeed: 1
-  attackDamage: 10
+  attackDamage: 1
 --- !u!114 &1744905284291361265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,10 +323,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8785526537220840052, guid: bf865b00459d84c47966770d44e8da57, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: d5087f3399a6a1644bdf31868bd4701d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

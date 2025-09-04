@@ -5,8 +5,10 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     float _currentHealth;
+    public float CurrentHealth { get { return _currentHealth; } }
 
     [SerializeField] float _maxHealth = 3f;
+    public float MaxHealth { get { return _maxHealth; } }
 
     //Old health value / New health value
     public event Action<float, float> OnHealthChange;

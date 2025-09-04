@@ -16,14 +16,19 @@ public class WaveManager : MonoBehaviour
 
 
     [Header("Spawn Points")]
-    [SerializeField] private List<Transform> spawnPoints;
+    [SerializeField] private List<Transform> spawnPoints0;
+    [SerializeField] private List<Transform> spawnPoints1;
+    [SerializeField] private List<Transform> spawnPoints2;
+    private int currentSpawnPointIndex = 0;
 
     [Header("Ref UI")]
     [SerializeField] private TextMeshProUGUI waveUIText;
 
     [Header("Targets")]
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private Transform chestTransform;
+    [SerializeField] private Transform chest0Transform;
+    [SerializeField] private Transform chest1Transform;
+    [SerializeField] private Transform chest2Transform;
 
     private int currentWave = 0;
     public int CurrentWave
@@ -47,6 +52,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         UpdateWaveUI();
+        SetSpawnPointIndexRandom();
         StartCoroutine(SpawnEnemiesWave());
     }
 
@@ -61,17 +67,50 @@ public class WaveManager : MonoBehaviour
     private void NextWave()
     {
         currentWave++;
+        SetSpawnPointIndexRandom();
         UpdateWaveUI();
+    }
+
+    public void SetSpawnPointIndex(int index)
+    {
+        currentSpawnPointIndex = index;
+    }
+
+    private void SetSpawnPointIndexRandom()
+    {
+        currentSpawnPointIndex = Random.Range(0, 3);
     }
 
     private void SpawnEnemy()
     {
+        List<Transform> spawnPoints = spawnPoints0;
+        if (currentSpawnPointIndex == 1)
+        {
+            spawnPoints = spawnPoints1;
+        }
+        else if (currentSpawnPointIndex == 2)
+        {
+            spawnPoints = spawnPoints2;
+        }
+
         if (enemySimplePrefab != null && spawnPoints.Count > 0)
         {
             currentEnemies++;
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
             IAController ia = Instantiate(enemySimplePrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<IAController>();
-            ia.Target = chestTransform;
+
+            if (currentSpawnPointIndex == 0)
+            {
+                ia.Target = chest0Transform;
+            }
+            else if (currentSpawnPointIndex == 1)
+            {
+                ia.Target = chest1Transform;
+            }
+            else if (currentSpawnPointIndex == 2)
+            {
+                ia.Target = chest2Transform;
+            }
         }
     }
 
