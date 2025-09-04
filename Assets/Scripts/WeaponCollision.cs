@@ -9,7 +9,7 @@ public class WeaponCollision : MonoBehaviour
         {
             SetDamage(collision.gameObject.GetComponent<Health>());
             _weaponToDestroy.DestroyWeapon();
-            Destroy(_weaponToDestroy);
+            Destroy(_weaponToDestroy.gameObject);
         }
     }
     private void SetDamage(Health health)

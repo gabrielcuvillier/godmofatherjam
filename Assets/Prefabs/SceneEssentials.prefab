@@ -813,7 +813,7 @@ Transform:
   m_GameObject: {fileID: 1681886979501961333}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.71868, y: -0.90742, z: 5.1899996}
+  m_LocalPosition: {x: 3.71868, y: 1.26, z: 5.1899996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2053,7 +2053,7 @@ Transform:
   m_GameObject: {fileID: 4359851110939738995}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.30132, y: -0.90742, z: -3.3}
+  m_LocalPosition: {x: -6.30132, y: 0.94, z: -3.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3914,7 +3914,7 @@ Transform:
   m_GameObject: {fileID: 7784740121347980943}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.59676, y: -1.6, z: 45.84059}
+  m_LocalPosition: {x: 7.59676, y: -0.4, z: 45.84059}
   m_LocalScale: {x: 200, y: 1, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3953,7 +3953,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7a3238d1536ac1f469478560bcc3392f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4341,7 +4341,7 @@ Transform:
   m_GameObject: {fileID: 8917999442682746730}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.71868, y: -0.90742, z: -4.43}
+  m_LocalPosition: {x: 3.71868, y: 0.96, z: -4.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4875,9 +4875,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1029910749921650237, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
   m_PrefabInstance: {fileID: 898504895720615078}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &562314843447192711 stripped
+--- !u!1 &2326545247205933662 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 843755533138198561, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3184517599177551608, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
   m_PrefabInstance: {fileID: 898504895720615078}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4564036212958977120 stripped
@@ -4891,6 +4891,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2f318f9642f5243bfea4f3df2e782a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+--- !u!1 &5043961887974832563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5298451897923491093, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
+  m_PrefabInstance: {fileID: 898504895720615078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7029858449021848131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7923857535819949797, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
@@ -5354,17 +5359,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4283138022113270810, guid: 20ff8e2c2e54d52419aeec442e1fb239, type: 3}
+      propertyPath: _ShotPoint
+      value: 
+      objectReference: {fileID: 5043961887974832563}
+    - target: {fileID: 4283138022113270810, guid: 20ff8e2c2e54d52419aeec442e1fb239, type: 3}
       propertyPath: _weaponParent
       value: 
-      objectReference: {fileID: 562314843447192711}
-    - target: {fileID: 4283138022113270810, guid: 20ff8e2c2e54d52419aeec442e1fb239, type: 3}
-      propertyPath: _itemEntries.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283138022113270810, guid: 20ff8e2c2e54d52419aeec442e1fb239, type: 3}
-      propertyPath: _weaponEntries.Array.size
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2326545247205933662}
     - target: {fileID: 4283138022113270810, guid: 20ff8e2c2e54d52419aeec442e1fb239, type: 3}
       propertyPath: '_itemEntries.Array.data[0]'
       value: 

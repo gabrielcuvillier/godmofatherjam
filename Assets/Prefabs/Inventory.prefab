@@ -59,9 +59,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9cc141ebcef3a4a92d25f3bc3b09f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  OnItemSelectedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnItemRemovedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   maxSlots: 4
   slotPrefab: {fileID: 7222343667653089083, guid: 690d683dc705dae44b8b2b3ede1ecbd9, type: 3}
   itemEmpty: {fileID: 11400000, guid: dd914d9e1c07419439d23be97d27c1ef, type: 2}
+  _itemEntries:
+  - {fileID: 11400000, guid: 26a1a7f59e212ba48a55ed7681e50dfa, type: 2}
+  - {fileID: 11400000, guid: 520f855e47f23f34ca8a48949915d18b, type: 2}
+  _weaponEntries:
+  - {fileID: 5903542548757031231, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+  - {fileID: 5903542548757031231, guid: 4068b540bc4744f43a33f5d36e2146c3, type: 3}
+  _weaponParent: {fileID: 0}
+  _ShotPoint: {fileID: 0}
 --- !u!114 &6702467915892924008
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -102,6 +102,10 @@ public class Inventory : MonoBehaviour
                     WeaponUsage weapon = Instantiate(_weaponEntries[indexNewItem], _weaponParent?.transform);
                     weapon.Initialize(_ShotPoint);
                     _slotsWeapons[slotIndex] = weapon;
+                    if (currentIndexSlot != slotIndex)
+                    {
+                        weapon.gameObject.SetActive(false);
+                    }
                 }
 
                 OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);

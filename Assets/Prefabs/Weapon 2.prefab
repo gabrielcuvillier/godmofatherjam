@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7761492486660898222}
   - component: {fileID: 5903542548757031231}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: Weapon 2
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3668313319792453968}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1631538, y: 0, z: 0, w: 0.9866007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.36, y: -0.248, z: 0.402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3402640646071806262}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 18.78, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5903542548757031231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,8 +63,8 @@ GameObject:
   - component: {fileID: 3402640646071806262}
   - component: {fileID: 7005137604837124236}
   - component: {fileID: 5041723403122581625}
-  - component: {fileID: 1081727782013898266}
   - component: {fileID: 6146878788658716958}
+  - component: {fileID: 3611384750533643913}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -82,7 +82,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.3, z: 0.05}
+  m_LocalScale: {x: 0.05, y: 0.54, z: 0.21}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7761492486660898222}
@@ -94,7 +94,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6240200571974865632}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &5041723403122581625
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e1506fa9dcf3b2847a28646bf087529f, type: 2}
+  - {fileID: 2100000, guid: 19aaac932dc85004f8aa1e9d6f4d69c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,29 +143,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1081727782013898266
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6240200571974865632}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &6146878788658716958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,3 +156,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponCollision
   _weaponToDestroy: {fileID: 5903542548757031231}
+--- !u!65 &3611384750533643913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240200571974865632}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 1.0000002}
+  m_Center: {x: 0, y: 0.000000044703484, z: 0}

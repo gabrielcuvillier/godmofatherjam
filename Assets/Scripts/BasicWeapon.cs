@@ -23,6 +23,7 @@ public class BasicWeapon : WeaponUsage
 
     public override void Use()
     {
+        transform.parent = null;
         _coroutineMove = StartCoroutine(Move());
     }
 
