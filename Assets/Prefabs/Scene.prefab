@@ -6948,6 +6948,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9113660297630558430}
     - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
+      propertyPath: poulpePerWave
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
+      propertyPath: requinPerWave
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
       propertyPath: enemiesPerWave
       value: 10
       objectReference: {fileID: 0}
@@ -6968,13 +6976,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6238663244615072309}
     - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
+      propertyPath: skeletonPerWave
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
       propertyPath: enemyPoulpePrefab
       value: 
       objectReference: {fileID: 7596253740001129157, guid: 732662a09804bb2499616c9fe43d5551, type: 3}
     - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
+      propertyPath: enemyRequinPrefab
+      value: 
+      objectReference: {fileID: 7596253740001129157, guid: ffbac185ee7307e4ea638d03d49ee14a, type: 3}
+    - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
       propertyPath: enemySkeletonPrefab
       value: 
       objectReference: {fileID: 7596253740001129157, guid: b27edbafa43a6cb4a85f15ce18f736f5, type: 3}
+    - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
+      propertyPath: poulpePerWaveIncrease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
+      propertyPath: requinPerWaveIncrease
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7971909164145438635, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
       propertyPath: spawnPoints0.Array.size
       value: 30
@@ -8194,6 +8218,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 92535198363339414, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
       insertIndex: 7
       addedObject: {fileID: 822042255638809882}
+    - targetCorrespondingSourceObject: {fileID: 92535198363339414, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
+      insertIndex: 8
+      addedObject: {fileID: 1786405888039591965}
   m_SourcePrefab: {fileID: 100100000, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
 --- !u!1 &1250088206608091421 stripped
 GameObject:
@@ -8229,6 +8256,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EncreUI
   encreUI: {fileID: 6581424254845124769}
   timeToDecrease: 2
+--- !u!114 &1786405888039591965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455370419507844766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0104d75c33890042b3452f4e3e176fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBounds
+  forceBound: 10
 --- !u!114 &7777789966770154702 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3688051927789088966, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}

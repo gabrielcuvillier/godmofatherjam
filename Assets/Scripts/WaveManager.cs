@@ -9,15 +9,18 @@ public class WaveManager : MonoBehaviour
     [Header("Wave Config")]
     [SerializeField] private int skeletonPerWave = 5;
     [SerializeField] private int poulpePerWave = 5;
+    [SerializeField] private int requinPerWave = 5;
     [SerializeField] private int skeletonPerWaveIncrease = 2;
     [SerializeField] private int poulpePerWaveIncrease = 2;
+    [SerializeField] private int requinPerWaveIncrease = 2;
     [SerializeField] private int maxEnemies = 20;
     [SerializeField] private int currentEnemies = 0;
-    private List<int> enemyTypes; // 0 = Skeleton, 1 = Poulpe
+    private List<int> enemyTypes; // 0 = Skeleton, 1 = Poulpe, 2 = Requin
 
     [Header("Ref Prefabs Enemy")]
     [SerializeField] private GameObject enemySkeletonPrefab;
     [SerializeField] private GameObject enemyPoulpePrefab;
+    [SerializeField] private GameObject enemyRequinPrefab;
 
     [Header("Spawn Points")]
     [SerializeField] private List<Transform> spawnPoints0;
@@ -111,6 +114,14 @@ public class WaveManager : MonoBehaviour
                 {
                     iaPoulpe.Target = playerTransform;
                 }
+                else
+                {
+                    IARequin iaRequin = enemy.GetComponent<IARequin>();
+                    if (iaRequin != null)
+                    {
+                        iaRequin.Target = playerTransform;
+                    }
+                }
             }
             else
             {
@@ -141,6 +152,11 @@ public class WaveManager : MonoBehaviour
         {
             enemyTypes.Add(1);
         }
+        for (int i = 0; i < requinPerWave; i++)
+        {
+            enemyTypes.Add(2);
+        }
+
         // Shuffle the list
         for (int i = 0; i < enemyTypes.Count; i++)
         {
@@ -171,6 +187,10 @@ public class WaveManager : MonoBehaviour
             if (enemyTypes[i] == 0)
             {
                 enemyPrefab = enemySkeletonPrefab;
+            }
+            else if (enemyTypes[i] == 2)
+            {
+                enemyPrefab = enemyRequinPrefab;
             }
             else
             {
