@@ -4,10 +4,9 @@ using UnityEngine;
 public class BasicWeapon : WeaponUsage
 {
     private GameObject _parent;
-    [SerializeField] private Rigidbody rb;
     Coroutine _coroutineMove;
 
-    public override void DestroyWeapon()
+    public override void WeaponCollide()
     {
         if (_coroutineMove != null) 
         {
