@@ -216,10 +216,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1041175534263593027, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
-      propertyPath: m_Volume
-      value: 0.3333
-      objectReference: {fileID: 0}
     - target: {fileID: 1163411229639658247, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
       propertyPath: m_Name
       value: SceneEssentials

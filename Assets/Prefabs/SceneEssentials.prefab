@@ -2263,7 +2263,6 @@ Transform:
   - {fileID: 7201096807327778558}
   - {fileID: 4356083092816564374}
   - {fileID: 1551401686227563710}
-  - {fileID: 3084286376491718189}
   - {fileID: 4282763454019775894}
   m_Father: {fileID: 5672707039045911869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6691,6 +6690,10 @@ PrefabInstance:
     - target: {fileID: 92535198363339414, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 147174927055422693, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
+      propertyPath: m_Volume
+      value: 0.3333
       objectReference: {fileID: 0}
     - target: {fileID: 147174927055422693, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
       propertyPath: m_Resource
