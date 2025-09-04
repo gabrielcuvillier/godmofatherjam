@@ -8,7 +8,8 @@ public class EncreUI : MonoBehaviour
 
     private float currentEncre;
     [SerializeField] private float timeToDecrease = 2f;
-    private float maxEncre = 100f;
+    private float maxEncre = 255f;
+    private float minEncre = 130f;
     private Coroutine coroutine;
     private float encreadded;
 
@@ -29,6 +30,8 @@ public class EncreUI : MonoBehaviour
     public void AddEncre(float amount)
     {
         encreadded = amount;
+        if (currentEncre < minEncre)
+            currentEncre = minEncre;
         currentEncre += amount;
         if (currentEncre > maxEncre)
             currentEncre = maxEncre;
@@ -48,7 +51,7 @@ public class EncreUI : MonoBehaviour
     private void DecreaseEncre()
     {
         currentEncre -= encreadded;
-        if (currentEncre < 0f)
+        if (currentEncre < minEncre)
             currentEncre = 0f;
 
         UpdateEncre();
