@@ -173,7 +173,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
       propertyPath: poulpePerWave
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: skeletonPerWave
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: poulpePerWaveIncrease
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: skeletonPerWaveIncrease
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746030957239893161, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

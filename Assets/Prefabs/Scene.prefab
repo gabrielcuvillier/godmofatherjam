@@ -6756,9 +6756,17 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7948433946371115062, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
+      propertyPath: _objectsPool.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948433946371115062, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
       propertyPath: _spawnPoints.Array.size
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 7948433946371115062, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
+      propertyPath: '_objectsPool.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8337270804157759812, guid: af676e7b2099cf6459a3fff30be11f6b, type: 3}
     - target: {fileID: 7948433946371115062, guid: b518d5d91d26fb7449c7bd35d603f9b7, type: 3}
       propertyPath: '_spawnPoints.Array.data[0]'
       value: 
