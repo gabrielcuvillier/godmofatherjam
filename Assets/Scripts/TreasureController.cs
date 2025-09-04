@@ -18,4 +18,9 @@ public class Treasure : MonoBehaviour
         healthBar.fillAmount = health.CurrentHealth / health.MaxHealth;
     }
 
+    public void EndGame()
+    {
+        GameManager.Instance.TriggerGameOver();
+    }
+
 }

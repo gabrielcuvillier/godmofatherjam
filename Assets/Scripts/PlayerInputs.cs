@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 
-public class PlayerInputs : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     PlayerInputsActions _actions;
 
@@ -16,26 +15,21 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] float _playerSpeed = 30f;
     [SerializeField] Vector2 _cameraRotationSpeed = new Vector2(30f, 30f);
 
-    public event Action OnAttack;
-
     private void OnEnable()
     {
         _actions = new PlayerInputsActions();
         _actions.Player.Enable();
-        DisableCursor();
-        _actions.Player.Attack.started += OnAttackDelegate;
-    }
-
-    private void OnAttackDelegate(InputAction.CallbackContext context)
-    {
-        OnAttack?.Invoke();
     }
 
     private void OnDisable()
     {
-        _actions.Player.Attack.started -= OnAttackDelegate;
         _actions.Player.Disable();
-        EnableCursor();
+    }
+
+    void Start()
+    {
+        GameManager.Instance.DisableCursor();
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -63,17 +57,5 @@ public class PlayerInputs : MonoBehaviour
         Vector3 direction = forward * inputDirection.y + right * inputDirection.x;
 
         _rigidbody.linearVelocity = direction * _playerSpeed + new Vector3(0f, _rigidbody.linearVelocity.y, 0f);
-    }
-
-    void EnableCursor()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    void DisableCursor()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 }
