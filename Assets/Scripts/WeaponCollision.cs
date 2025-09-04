@@ -8,7 +8,8 @@ public class WeaponCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             SetDamage(collision.gameObject.GetComponent<Health>());
-            Destroy(_weaponToDestroy);
+            _weaponToDestroy.DestroyWeapon();
+            Destroy(_weaponToDestroy.gameObject);
         }
     }
     private void SetDamage(Health health)

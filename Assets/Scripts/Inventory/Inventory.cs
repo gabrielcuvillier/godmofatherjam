@@ -16,6 +16,13 @@ public class Inventory : MonoBehaviour
     private List<InventorySlot> slots = new List<InventorySlot>();
     public Item EmptyItem => itemEmpty;
 
+    [Header("Link item/weapon")]
+    [SerializeField] List<Item> _itemEntries;
+    [SerializeField] List<WeaponUsage> _weaponEntries;
+    WeaponUsage[] _slotsWeapons;
+    [SerializeField] GameObject _weaponParent;
+    [SerializeField] GameObject _ShotPoint;
+
     void Start()
     {
         // Initialiser les slots d'inventaire au démarage
@@ -37,6 +44,9 @@ public class Inventory : MonoBehaviour
         }
 
         slots[currentIndexSlot].SetIsTarget(true);
+        _slotsWeapons = new WeaponUsage[maxSlots];
+
+
     }
 
     private void ModifyCurrentSlot(int amount)
@@ -79,21 +89,30 @@ public class Inventory : MonoBehaviour
         }
 
         // Ajouter l'élément à l'emplacement vide
-        int index = 0;
+        int slotIndex = 0;
         foreach (var slot in slots)
         {
             if (slot.Item == itemEmpty)
             {
                 slot.SetItem(newItem);
+
+                int indexNewItem = _itemEntries.IndexOf(newItem);
+                if (_weaponEntries != null && _weaponEntries.Count > indexNewItem)
+                {
+                    WeaponUsage weapon = Instantiate(_weaponEntries[indexNewItem], _weaponParent?.transform);
+                    weapon.Initialize(_ShotPoint);
+                    _slotsWeapons[slotIndex] = weapon;
+                    if (currentIndexSlot != slotIndex)
+                    {
+                        weapon.gameObject.SetActive(false);
+                    }
+                }
+
+                OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
+                OnItemSelectedEvent.Invoke();
                 return true;
             }
-            index++;
-        }
-
-        if (currentIndexSlot == index)
-        {
-            OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
-            OnItemSelectedEvent.Invoke();
+            slotIndex++;
         }
 
         return false;
@@ -132,5 +151,20 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(int index)
     {
         slots[index].SetItem(itemEmpty);
+    }
+
+    public WeaponUsage GetWeaponForItem(int slotIndex)
+    {
+        int indexWeapon = slotIndex; //_itemEntries.IndexOf(item);
+        if (_slotsWeapons.Length > indexWeapon)
+        {
+            WeaponUsage newWeapon = _slotsWeapons[indexWeapon];
+            return newWeapon;
+        }
+        else
+        {
+            Debug.LogWarning("Weapon entries is not initialized as wanted.");
+            return null;
+        }
     }
 }
