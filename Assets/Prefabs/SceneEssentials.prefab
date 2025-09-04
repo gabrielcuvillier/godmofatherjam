@@ -550,6 +550,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1167880605081461710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2504469087093304416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165081755994181899}
+  - component: {fileID: 3407688943219995951}
+  - component: {fileID: 6078589306120640845}
+  m_Layer: 0
+  m_Name: SandHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &165081755994181899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504469087093304416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7441141645742032513}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3407688943219995951
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504469087093304416}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30, y: 1, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6078589306120640845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504469087093304416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd654c97b6b311841b5fac36998b1662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SandController
 --- !u!1 &2550037338047901220
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,7 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d77dfc17b29224ab37ab30545e73cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  gameOver: {fileID: 3657807212606098183}
 --- !u!1 &4081138102883035587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1617,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 239109018248636379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6186120296882401234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2186682449352308217}
+  - component: {fileID: 4568028877883634382}
+  - component: {fileID: 484569151458013760}
+  m_Layer: 0
+  m_Name: SandHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2186682449352308217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186120296882401234}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4813236923764104588}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4568028877883634382
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186120296882401234}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30, y: 1, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &484569151458013760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186120296882401234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd654c97b6b311841b5fac36998b1662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SandController
 --- !u!1 &6352407059756071811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1821,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1167880605081461710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6712268096936529091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7792389784810244225}
+  - component: {fileID: 6453841298405525842}
+  - component: {fileID: 4743939694552035327}
+  m_Layer: 0
+  m_Name: SandHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7792389784810244225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712268096936529091}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7190600479347006738}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6453841298405525842
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712268096936529091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30, y: 1, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4743939694552035327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712268096936529091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd654c97b6b311841b5fac36998b1662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SandController
 --- !u!1 &6931704026125013576
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,7 +3299,10 @@ PrefabInstance:
     - {fileID: 6752162277414830609, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
     - {fileID: 6638544557711620482, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 183413022238569581, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2186682449352308217}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
 --- !u!4 &4813236923764104588 stripped
@@ -3198,7 +3398,10 @@ PrefabInstance:
     - {fileID: 6752162277414830609, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
     - {fileID: 6638544557711620482, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 183413022238569581, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7792389784810244225}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
 --- !u!4 &7190600479347006738 stripped
@@ -3294,7 +3497,10 @@ PrefabInstance:
     - {fileID: 6752162277414830609, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
     - {fileID: 6638544557711620482, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 183413022238569581, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 165081755994181899}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d2709ec081f2ea40af6f029e122c239, type: 3}
 --- !u!4 &7441141645742032513 stripped

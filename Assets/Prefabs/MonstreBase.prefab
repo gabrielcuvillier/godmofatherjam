@@ -41,12 +41,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1567897177180842209}
-  - component: {fileID: 4751070319796361834}
+  - component: {fileID: 6260404838793542164}
   - component: {fileID: 1744905284291361265}
   - component: {fileID: 4086426482285862319}
   - component: {fileID: 8406979214368463290}
   m_Layer: 0
-  m_Name: IA
+  m_Name: MonstreBase
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ Transform:
   - {fileID: 1492057699005511157}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4751070319796361834
+--- !u!114 &6260404838793542164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,13 +78,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7596253740001129157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26c77096145ec524fb3f7ee166e4ee9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d19391d68a055b4fb0c88169b8ef0d4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IAController
+  m_EditorClassIdentifier: Assembly-CSharp::IABase
   target: {fileID: 0}
-  currentState: 1
+  currentState: 0
   attackRange: 5
-  movementSpeed: 3
+  movementSpeedSand: 3
+  movementSpeedWater: 1
   attackSpeed: 1
   attackDamage: 1
 --- !u!114 &1744905284291361265
@@ -106,8 +107,8 @@ MonoBehaviour:
   _onDeathEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4751070319796361834}
-        m_TargetAssemblyTypeName: IAController, Assembly-CSharp
+      - m_Target: {fileID: 6260404838793542164}
+        m_TargetAssemblyTypeName: IABase, Assembly-CSharp
         m_MethodName: Death
         m_Mode: 1
         m_Arguments:
