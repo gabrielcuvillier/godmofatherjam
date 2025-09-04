@@ -76,4 +76,5 @@ public class BuoyWeapon : WeaponUsage
         }
         _coroutineMove = StartCoroutine(MoveTowards(objective));
     }
+
 }

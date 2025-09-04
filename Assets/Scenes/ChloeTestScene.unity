@@ -171,13 +171,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 7857865381457727482, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: _objectsPool.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
       propertyPath: poulpePerWave
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
       propertyPath: skeletonPerWave
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7918407060334192743, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
       propertyPath: poulpePerWaveIncrease

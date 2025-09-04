@@ -10,6 +10,10 @@ public class WeaponCollision : MonoBehaviour
             SetDamage(collision.gameObject.GetComponent<Health>());
             _weaponToDestroy.WeaponCollide();
         }
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
+            _weaponToDestroy.DestroyWeapon();
+        }
     }
     private void SetDamage(Health health)
     {

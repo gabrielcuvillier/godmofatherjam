@@ -5,7 +5,6 @@ public class ParasolWeapon : WeaponUsage
 {
     private GameObject _parent;
     Coroutine _coroutineMove;
-    bool _isThrown = false;
 
     public override void Select()
     {
@@ -26,6 +25,7 @@ public class ParasolWeapon : WeaponUsage
             StopCoroutine(_coroutineMove);
             _coroutineMove = null;
         }
+        Destroy(gameObject);
     }
 
     public override void Initialize(GameObject parent)
