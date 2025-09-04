@@ -7,13 +7,17 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager Instance;
     [Header("Wave Config")]
-    [SerializeField] private int enemiesPerWave = 5;
+    [SerializeField] private int skeletonPerWave = 5;
+    [SerializeField] private int poulpePerWave = 5;
+    [SerializeField] private int skeletonPerWaveIncrease = 2;
+    [SerializeField] private int poulpePerWaveIncrease = 2;
     [SerializeField] private int maxEnemies = 20;
     [SerializeField] private int currentEnemies = 0;
+    private List<int> enemyTypes; // 0 = Skeleton, 1 = Poulpe
 
     [Header("Ref Prefabs Enemy")]
-    [SerializeField] private GameObject enemySimplePrefab;
-
+    [SerializeField] private GameObject enemySkeletonPrefab;
+    [SerializeField] private GameObject enemyPoulpePrefab;
 
     [Header("Spawn Points")]
     [SerializeField] private List<Transform> spawnPoints0;
@@ -81,7 +85,7 @@ public class WaveManager : MonoBehaviour
         currentSpawnPointIndex = Random.Range(0, 3);
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(GameObject prefab)
     {
         List<Transform> spawnPoints = spawnPoints0;
         if (currentSpawnPointIndex == 1)
@@ -93,32 +97,86 @@ public class WaveManager : MonoBehaviour
             spawnPoints = spawnPoints2;
         }
 
-        if (enemySimplePrefab != null && spawnPoints.Count > 0)
+        if (prefab != null && spawnPoints.Count > 0)
         {
             currentEnemies++;
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-            IABase ia = Instantiate(enemySimplePrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<IABase>();
+            GameObject enemy = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
 
-            if (currentSpawnPointIndex == 0)
+            IABase iaSkeleton = enemy.GetComponent<IABase>();
+            if (iaSkeleton == null)
             {
-                ia.Target = chest0Transform;
+                IAPoulpe iaPoulpe = enemy.GetComponent<IAPoulpe>();
+                if (iaPoulpe != null)
+                {
+                    iaPoulpe.Target = playerTransform;
+                }
             }
-            else if (currentSpawnPointIndex == 1)
+            else
             {
-                ia.Target = chest1Transform;
+                if (currentSpawnPointIndex == 0)
+                {
+                    iaSkeleton.Target = chest0Transform;
+                }
+                else if (currentSpawnPointIndex == 1)
+                {
+                    iaSkeleton.Target = chest1Transform;
+                }
+                else if (currentSpawnPointIndex == 2)
+                {
+                    iaSkeleton.Target = chest2Transform;
+                }
             }
-            else if (currentSpawnPointIndex == 2)
-            {
-                ia.Target = chest2Transform;
-            }
+        }
+    }
+
+    private void GenerateListEnemy()
+    {
+        enemyTypes = new List<int>();
+        for (int i = 0; i < skeletonPerWave; i++)
+        {
+            enemyTypes.Add(0);
+        }
+        for (int i = 0; i < poulpePerWave; i++)
+        {
+            enemyTypes.Add(1);
+        }
+        // Shuffle the list
+        for (int i = 0; i < enemyTypes.Count; i++)
+        {
+            int temp = enemyTypes[i];
+            int randomIndex = Random.Range(i, enemyTypes.Count);
+            enemyTypes[i] = enemyTypes[randomIndex];
+            enemyTypes[randomIndex] = temp;
+        }
+
+        // Increase for next wave
+        skeletonPerWave += skeletonPerWaveIncrease;
+        poulpePerWave += poulpePerWaveIncrease;
+        if (skeletonPerWave + poulpePerWave > maxEnemies)
+        {
+            int total = skeletonPerWave + poulpePerWave;
+            float ratioSkeleton = (float)skeletonPerWave / total;
+            skeletonPerWave = Mathf.RoundToInt(maxEnemies * ratioSkeleton);
+            poulpePerWave = maxEnemies - skeletonPerWave;
         }
     }
 
     private IEnumerator SpawnEnemiesWave()
     {
-        for (int i = 0; i < enemiesPerWave; i++)
+        GenerateListEnemy();
+        for (int i = 0; i < enemyTypes.Count; i++)
         {
-            SpawnEnemy();
+            GameObject enemyPrefab;
+            if (enemyTypes[i] == 0)
+            {
+                enemyPrefab = enemySkeletonPrefab;
+            }
+            else
+            {
+                enemyPrefab = enemyPoulpePrefab;
+            }
+            SpawnEnemy(enemyPrefab);
             yield return new WaitForSeconds(1f);
         }
 

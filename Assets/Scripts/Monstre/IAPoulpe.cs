@@ -13,7 +13,7 @@ public class IAPoulpe : MonoBehaviour
     }
 
     private Rigidbody rb;
-    private Health targetHealth;
+    private EncreUI targetEncreUI;
     [SerializeField] private Transform target;
     public Transform Target
     {
@@ -31,7 +31,7 @@ public class IAPoulpe : MonoBehaviour
     [SerializeField] private float attackRange;
     [SerializeField] private float movementSpeed;
     [SerializeField] private float attackSpeed;
-    [SerializeField] private float attackDamage;
+    [SerializeField] private float countOfEncreToShoot = 10; // max 100
 
     private float attackCooldown;
     private float attackTimer;
@@ -40,7 +40,7 @@ public class IAPoulpe : MonoBehaviour
         Sand,
         Water
     }
-    private TerrainType currentTerrain = TerrainType.Water;
+    [SerializeField] private TerrainType currentTerrain = TerrainType.Water;
 
     private void Awake()
     {
@@ -54,7 +54,7 @@ public class IAPoulpe : MonoBehaviour
     {
         if (target != null)
         {
-            targetHealth = target.transform.GetComponent<Health>();
+            targetEncreUI = target.transform.GetComponent<EncreUI>();
         }
     }
 
@@ -122,7 +122,7 @@ public class IAPoulpe : MonoBehaviour
 
             // Jouer l'attaque
             //Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
-            targetHealth?.TakeDamage(attackDamage);
+            targetEncreUI?.AddEncre(countOfEncreToShoot);
 
         }
         else

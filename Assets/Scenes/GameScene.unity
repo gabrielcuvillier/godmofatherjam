@@ -119,6 +119,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1759101381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1759101382}
+  - component: {fileID: 1759101384}
+  - component: {fileID: 1759101383}
+  m_Layer: 5
+  m_Name: EncreUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1759101382
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759101381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2079680808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1759101383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759101381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1759101384
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759101381}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2079680807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +202,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 681977349884533312, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 681977349884533312, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.91
+      objectReference: {fileID: 0}
     - target: {fileID: 783875873505859194, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
       propertyPath: m_LocalScale.x
       value: 500
@@ -139,6 +222,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneEssentials
       objectReference: {fileID: 0}
+    - target: {fileID: 3259107081900781214, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: enemyPoulpePrefab
+      value: 
+      objectReference: {fileID: 7596253740001129157, guid: 732662a09804bb2499616c9fe43d5551, type: 3}
+    - target: {fileID: 3259107081900781214, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      propertyPath: enemySkeletonPrefab
+      value: 
+      objectReference: {fileID: 7596253740001129157, guid: b27edbafa43a6cb4a85f15ce18f736f5, type: 3}
     - target: {fileID: 5672707039045911869, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.23815
@@ -181,9 +272,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3306830426256122775, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1759101382}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 950507139020531248, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 2079680810}
   m_SourcePrefab: {fileID: 100100000, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+--- !u!224 &2079680808 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3306830426256122775, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+  m_PrefabInstance: {fileID: 2079680807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2079680809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 950507139020531248, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
+  m_PrefabInstance: {fileID: 2079680807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2079680810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079680809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9cc5b80660812408e159f55c054d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EncreUI
+  encreUI: {fileID: 1759101383}
+  timeToDecrease: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
