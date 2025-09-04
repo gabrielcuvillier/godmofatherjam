@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
+    public static GameOver Instance { get; private set; }
     [SerializeField] private GameObject gameOverUI;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void RestartGame()
     {
@@ -17,6 +23,7 @@ public class GameOver : MonoBehaviour
     [ContextMenu("Show Game Over UI")]
     public void ShowGameOverUI()
     {
+        Time.timeScale = 0f;
         gameOverUI.SetActive(true);
         GameManager.Instance.EnableCursor();
     }
