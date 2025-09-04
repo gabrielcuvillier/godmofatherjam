@@ -14,6 +14,8 @@ public class IAPoulpe : MonoBehaviour
 
     private Rigidbody rb;
     private EncreUI targetEncreUI;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform shotPoint;
     [SerializeField] private Transform target;
     public Transform Target
     {
@@ -31,7 +33,7 @@ public class IAPoulpe : MonoBehaviour
     [SerializeField] private float attackRange;
     [SerializeField] private float movementSpeed;
     [SerializeField] private float attackSpeed;
-    [SerializeField] private float countOfEncreToShoot = 10; // max 100
+    [SerializeField] private float countOfEncreToShoot = 10; // max 248
 
     private float attackCooldown;
     private float attackTimer;
@@ -120,9 +122,8 @@ public class IAPoulpe : MonoBehaviour
         {
             attackTimer = 0f;
 
-            // Jouer l'attaque
-            //Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
-            targetEncreUI?.AddEncre(countOfEncreToShoot);
+            Debug.Log("Poulpe Attack!");
+            LancerProjectile();
 
         }
         else
@@ -132,6 +133,22 @@ public class IAPoulpe : MonoBehaviour
             if (!IsTargetInRange())
             {
                 currentState = EIAState.Chase;
+            }
+        }
+    }
+
+    private void LancerProjectile()
+    {
+        if (bulletPrefab != null && shotPoint != null && target != null)
+        {
+            Vector3 direction = GetDirectionToTarget();
+            if (direction == Vector3.zero) return;
+            GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, Quaternion.LookRotation(direction));
+            BulletController bulletController = bullet.GetComponent<BulletController>();
+            if (bulletController != null)
+            {
+                bulletController.Damage = (int)countOfEncreToShoot;
+                bulletController.Initialize(direction);
             }
         }
     }
