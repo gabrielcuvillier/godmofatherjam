@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
@@ -224,11 +224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3259107081900781214, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
       propertyPath: enemyPoulpePrefab
-      value: 
+      value:
       objectReference: {fileID: 7596253740001129157, guid: 732662a09804bb2499616c9fe43d5551, type: 3}
     - target: {fileID: 3259107081900781214, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
       propertyPath: enemySkeletonPrefab
-      value: 
+      value:
       objectReference: {fileID: 7596253740001129157, guid: b27edbafa43a6cb4a85f15ce18f736f5, type: 3}
     - target: {fileID: 5672707039045911869, guid: 8e8b19610d965f84ba8d20a90506e494, type: 3}
       propertyPath: m_LocalPosition.x
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e9cc5b80660812408e159f55c054d9a, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::EncreUI
   encreUI: {fileID: 1759101383}
   timeToDecrease: 2
