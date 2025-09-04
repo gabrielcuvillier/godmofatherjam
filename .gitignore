@@ -99,5 +99,5 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
 .vsconfig
-/[Aa]ssets/Textures/MinimapTexture.renderTexture
-/[Aa]ssets/Textures/RenderingTexture.renderTexture
+.vsconfig
+.idea
