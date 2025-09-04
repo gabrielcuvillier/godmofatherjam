@@ -1,13 +1,20 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
+    public event Action<Item,int> OnItemSelected;
+    [SerializeField] UnityEvent OnItemSelectedEvent;
+    [SerializeField] UnityEvent OnItemRemovedEvent;
+
     [SerializeField] private int maxSlots = 3;
     [SerializeField] private InventorySlot slotPrefab;
     [SerializeField] private Item itemEmpty;
     private int currentIndexSlot = 0;
     private List<InventorySlot> slots = new List<InventorySlot>();
+    public Item EmptyItem => itemEmpty;
 
     void Start()
     {
@@ -46,6 +53,9 @@ public class Inventory : MonoBehaviour
         }
 
         slots[currentIndexSlot].SetIsTarget(true);
+
+        OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
+        OnItemSelectedEvent.Invoke();
     }
 
     private bool IsInventoryFull()
@@ -69,6 +79,7 @@ public class Inventory : MonoBehaviour
         }
 
         // Ajouter l'élément à l'emplacement vide
+        int index = 0;
         foreach (var slot in slots)
         {
             if (slot.Item == itemEmpty)
@@ -76,6 +87,13 @@ public class Inventory : MonoBehaviour
                 slot.SetItem(newItem);
                 return true;
             }
+            index++;
+        }
+
+        if (currentIndexSlot == index)
+        {
+            OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
+            OnItemSelectedEvent.Invoke();
         }
 
         return false;
@@ -92,6 +110,9 @@ public class Inventory : MonoBehaviour
         slots[currentIndexSlot].SetIsTarget(false);
         currentIndexSlot = index;
         slots[currentIndexSlot].SetIsTarget(true);
+        
+        OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
+        OnItemSelectedEvent.Invoke();
     }
 
     [ContextMenu("Next Slot")]
@@ -106,5 +127,10 @@ public class Inventory : MonoBehaviour
     {
         Debug.Log("PreviousSlot");
         ModifyCurrentSlot(1);
+    }
+
+    public void RemoveItem(int index)
+    {
+        slots[index].SetItem(itemEmpty);
     }
 }
