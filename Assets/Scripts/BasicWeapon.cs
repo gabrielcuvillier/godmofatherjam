@@ -24,15 +24,16 @@ public class BasicWeapon : WeaponUsage
     public override void Use()
     {
         transform.parent = null;
-        _coroutineMove = StartCoroutine(Move());
+        Vector3 direction = _parent.transform.forward;
+        _coroutineMove = StartCoroutine(Move(direction));
     }
 
-    private IEnumerator Move()
+    private IEnumerator Move(Vector3 direction)
     {
         float timer = 0f;
         while (timer < lifetime)
         {
-            transform.position += _parent.transform.forward * speed * Time.deltaTime;
+            transform.position += direction * speed * Time.deltaTime;
             yield return null;
             timer += Time.deltaTime;
         }
