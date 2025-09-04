@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemTest2
   m_EditorClassIdentifier: Assembly-CSharp::Item
   sprite: {fileID: 21300000, guid: 5093183299ff1f24087d1524ab5647e5, type: 3}
-  itemName: Test
+  itemName: Tong
   description: test 2
   count: 1
   countMax: 2
