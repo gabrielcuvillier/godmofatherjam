@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerInputs : MonoBehaviour
 {
     PlayerInputsActions _actions;
 
@@ -15,15 +16,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _playerSpeed = 30f;
     [SerializeField] Vector2 _cameraRotationSpeed = new Vector2(30f, 30f);
 
+    public event Action OnAttack;
+
     private void OnEnable()
     {
         _actions = new PlayerInputsActions();
         _actions.Player.Enable();
         DisableCursor();
+        _actions.Player.Attack.started += OnAttackDelegate;
+    }
+
+    private void OnAttackDelegate(InputAction.CallbackContext context)
+    {
+        OnAttack?.Invoke();
     }
 
     private void OnDisable()
     {
+        _actions.Player.Attack.started -= OnAttackDelegate;
         _actions.Player.Disable();
         EnableCursor();
     }

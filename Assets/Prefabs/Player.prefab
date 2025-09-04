@@ -339,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6972405222604590755
 Transform:
   m_ObjectHideFlags: 0
@@ -466,6 +466,7 @@ Transform:
   m_Children:
   - {fileID: 6972405222604590755}
   - {fileID: 3132003006563319632}
+  - {fileID: 8809446879201616433}
   m_Father: {fileID: 1029910749921650237}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &7322755105576937883
@@ -730,6 +731,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7923857535819949797}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1294552932359167903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7923857535819949797}
+    m_Modifications:
+    - target: {fileID: 3668313319792453968, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_Name
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668313319792453968, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903542548757031231, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: shotPoint
+      value: 
+      objectReference: {fileID: 3132003006563319632}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.248
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.402
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9866007
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.1631538
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 18.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+--- !u!4 &8809446879201616433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7761492486660898222, guid: f603afbaec359d74197e6b9b430b68ee, type: 3}
+  m_PrefabInstance: {fileID: 1294552932359167903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6394101984294126867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -782,6 +853,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8785526537220840052, guid: bf865b00459d84c47966770d44e8da57, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 23c949d365cf0fe4487d9144f1392822, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
