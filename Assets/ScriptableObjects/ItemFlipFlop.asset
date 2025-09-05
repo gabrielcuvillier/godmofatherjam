@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf8f05580d27cd49a95ed17f56f0b17, type: 3}
   m_Name: ItemFlipFlop
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  sprite: {fileID: 21300000, guid: e094668063d787348a18cef351538b08, type: 3}
+  sprite: {fileID: 21300000, guid: 67513c2733c3145428cf10b51f4e9248, type: 3}
   itemName: Tong
   description: test 2
   count: 1

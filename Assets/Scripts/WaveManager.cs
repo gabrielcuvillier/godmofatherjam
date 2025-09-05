@@ -38,6 +38,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private Transform chest1Transform;
     [SerializeField] private Transform chest2Transform;
 
+    [SerializeField] private ParticleSystem _particleSystemChestPrefab;
+    private ParticleSystem _particleSystemChest;
+
     private int currentWave = 0;
     public int CurrentWave
     {
@@ -62,6 +65,7 @@ public class WaveManager : MonoBehaviour
         UpdateWaveUI();
         SetSpawnPointIndexRandom();
         StartCoroutine(SpawnEnemiesWave());
+        UpdateVisual();
     }
 
     private void UpdateWaveUI()
@@ -78,6 +82,7 @@ public class WaveManager : MonoBehaviour
         currentWave++;
         SetSpawnPointIndexRandom();
         UpdateWaveUI();
+        UpdateVisual();
     }
 
     public void SetSpawnPointIndex(int index)
@@ -88,6 +93,33 @@ public class WaveManager : MonoBehaviour
     private void SetSpawnPointIndexRandom()
     {
         currentSpawnPointIndex = Random.Range(0, 3);
+    }
+
+    private void UpdateVisual()
+    {
+        if (_particleSystemChest != null)
+        {
+            Destroy(_particleSystemChest.gameObject);
+            _particleSystemChest = null;
+        }
+        Transform transformChest = null;
+        if (currentSpawnPointIndex == 0)
+        {
+            transformChest = chest0Transform;
+        }
+        else if (currentSpawnPointIndex == 1)
+        {
+            transformChest = chest1Transform;
+        }
+        else if (currentSpawnPointIndex == 2)
+        {
+            transformChest = chest2Transform;
+        }
+
+        if (transformChest != null)
+        {
+            _particleSystemChest = Instantiate(_particleSystemChestPrefab, transformChest.position, Quaternion.identity);
+        }
     }
 
     private void SpawnEnemy(GameObject prefab)
