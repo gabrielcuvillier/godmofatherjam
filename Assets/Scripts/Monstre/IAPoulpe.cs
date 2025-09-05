@@ -1,7 +1,9 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Animator))]
 public class IAPoulpe : MonoBehaviour
 {
     // ne peux pas aller sur le sable et tire depuis l'eau
@@ -13,6 +15,7 @@ public class IAPoulpe : MonoBehaviour
     }
 
     private Rigidbody rb;
+    private Animator animator;
     private EncreUI targetEncreUI;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform shotPoint;
@@ -22,6 +25,18 @@ public class IAPoulpe : MonoBehaviour
         get { return target; }
         set { target = value; }
     }
+
+    [Header("Audio")]
+    [Tooltip("Boucle jouée quand l'ennemi se déplace")]
+    [SerializeField] private AudioClip movementLoopClip;
+    [Tooltip("Son joué quand l'ennemi se fait toucher")]
+    [SerializeField] private AudioClip hitClip;
+    [SerializeField] private float maxDistanceForSound;
+    [SerializeField] private float spatialBlendForSound = 1f;
+
+    private AudioSource movementSource;
+    private AudioSource sfxSource;
+    private bool hitOverrideActive = false;
 
     [Header("IA Settings")]
     [SerializeField] private EIAState currentState;
@@ -47,9 +62,26 @@ public class IAPoulpe : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 
         attackCooldown = 1f / attackSpeed;
         attackTimer = 0f;
+
+        movementSource = gameObject.AddComponent<AudioSource>();
+        movementSource.playOnAwake = false;
+        movementSource.loop = true;
+        movementSource.clip = movementLoopClip;
+        movementSource.spatialBlend = spatialBlendForSound;
+        movementSource.maxDistance = maxDistanceForSound;
+        movementSource.rolloffMode = AudioRolloffMode.Linear;
+
+        sfxSource = gameObject.AddComponent<AudioSource>();
+        sfxSource.playOnAwake = false;
+        sfxSource.loop = false;
+        sfxSource.clip = hitClip;
+        sfxSource.spatialBlend = spatialBlendForSound;
+        sfxSource.maxDistance = maxDistanceForSound;
+        sfxSource.rolloffMode = AudioRolloffMode.Linear;
     }
 
     private void Start()
@@ -58,6 +90,8 @@ public class IAPoulpe : MonoBehaviour
         {
             targetEncreUI = target.transform.GetComponent<EncreUI>();
         }
+
+        animator.SetBool("IsMoving", true);
     }
 
     void Update()
@@ -96,6 +130,34 @@ public class IAPoulpe : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Hit()
+    {
+        animator.SetTrigger("Hit");
+        if (hitClip != null)
+            StartCoroutine(PlayHitAndReturn());
+    }
+
+    private IEnumerator PlayHitAndReturn()
+    {
+        hitOverrideActive = true;
+
+        if (movementSource.isPlaying) movementSource.Pause();
+
+        sfxSource.Stop();
+        sfxSource.clip = hitClip;
+        sfxSource.Play();
+
+        yield return new WaitForSeconds(hitClip.length);
+
+        hitOverrideActive = false;
+
+        if (animator.GetBool("IsMoving") && movementLoopClip != null)
+        {
+            if (!movementSource.isPlaying)
+                movementSource.UnPause();
+        }
+    }
+
     private void Move()
     {
         if (target != null && IsTargetInRange())
@@ -113,6 +175,32 @@ public class IAPoulpe : MonoBehaviour
         if (direction != Vector3.zero)
         {
             rb.MovePosition(rb.position + direction * movementSpeed * Time.deltaTime);
+
+            if (!animator.GetBool("IsMoving"))
+            {
+                animator.SetBool("IsMoving", true);
+                UpdateMovementAudio(true);
+            }
+        }
+    }
+
+    private void UpdateMovementAudio(bool shouldMove)
+    {
+        if (hitOverrideActive) return;
+
+        if (shouldMove && movementLoopClip != null)
+        {
+            if (!movementSource.isPlaying)
+            {
+                if (movementSource.time > 0f)
+                    movementSource.UnPause();
+                else
+                    movementSource.Play();
+            }
+        }
+        else
+        {
+            if (movementSource.isPlaying) movementSource.Pause();
         }
     }
 
@@ -133,6 +221,7 @@ public class IAPoulpe : MonoBehaviour
             if (!IsTargetInRange())
             {
                 currentState = EIAState.Chase;
+                animator.SetBool("IsMoving", true);
             }
         }
     }

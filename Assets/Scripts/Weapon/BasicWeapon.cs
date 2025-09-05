@@ -13,6 +13,7 @@ public class BasicWeapon : WeaponUsage
             StopCoroutine(_coroutineMove);
             _coroutineMove = null;
         }
+        Destroy(gameObject);
     }
 
     public override void Initialize(GameObject parent)
@@ -22,6 +23,7 @@ public class BasicWeapon : WeaponUsage
 
     public override void Use()
     {
+        _isThrown = true;
         transform.parent = null;
         Vector3 direction = _parent.transform.forward;
         _coroutineMove = StartCoroutine(Move(direction));

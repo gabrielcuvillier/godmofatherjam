@@ -29,7 +29,11 @@ public class BulletController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("Player"))
         {
             SetDamage(other.GetComponent<EncreUI>());
             Destroy(gameObject);
