@@ -74,12 +74,15 @@ public class IABase : MonoBehaviour
         movementSource.clip = movementLoopClip;
         movementSource.spatialBlend = spatialBlendForSound;
         movementSource.maxDistance = maxDistanceForSound;
+        movementSource.rolloffMode = AudioRolloffMode.Linear;
 
         sfxSource = gameObject.AddComponent<AudioSource>();
         sfxSource.playOnAwake = false;
         sfxSource.loop = false;
+        sfxSource.clip = hitClip;
         sfxSource.spatialBlend = spatialBlendForSound;
         sfxSource.maxDistance = maxDistanceForSound;
+        sfxSource.rolloffMode = AudioRolloffMode.Linear;
     }
 
     private void Start()
