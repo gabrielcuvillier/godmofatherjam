@@ -117,6 +117,8 @@ MonoBehaviour:
   target: {fileID: 0}
   movementLoopClip: {fileID: 0}
   hitClip: {fileID: 0}
+  maxDistanceForSound: 0
+  spatialBlendForSound: 1
   currentState: 0
   attackRange: 10
   movementSpeedSand: 2
@@ -138,7 +140,19 @@ MonoBehaviour:
   _maxHealth: 10
   _onHealthChangeEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -775403488774194454}
+        m_TargetAssemblyTypeName: IABase, Assembly-CSharp
+        m_MethodName: Hit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDeathEvent:
     m_PersistentCalls:
       m_Calls:
