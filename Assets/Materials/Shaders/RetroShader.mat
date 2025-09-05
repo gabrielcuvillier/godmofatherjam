@@ -37,10 +37,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorResolution: 10
-    - _ColorTransition: 0
-    - _DitherSpread: 0
-    - _QuantizationDivision: 0.00000001
+    - _ColorResolution: 50
+    - _ColorTransition: 1
+    - _DitherSpread: 1
+    - _QuantizationDivision: 0.5
     - _QuantizationLevel: 0.0001
     m_Colors: []
   m_BuildTextureStacks: []
