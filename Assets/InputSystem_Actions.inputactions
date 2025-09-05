@@ -166,6 +166,28 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Right",
+                    "id": "eac3d07d-20e6-4898-ac85-e2b2f1322600",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "1722b13e-677e-4dba-9f54-d7ceb6a0536e",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "Up",
                     "id": "77bff152-3580-4b21-b6de-dcd0c7e41164",
                     "path": "<Mouse>/rightButton",
