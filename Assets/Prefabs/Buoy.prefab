@@ -49,7 +49,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damage: 10
-  speed: 10
+  speed: 25
   lifetime: 20
   _speedRotation: 100
   _distanceRebound: 15
