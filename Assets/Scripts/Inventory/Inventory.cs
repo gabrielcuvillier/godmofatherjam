@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
-    public event Action<Item,int> OnItemSelected;
+    public event Action<Item, int> OnItemSelected;
     [SerializeField] UnityEvent OnItemSelectedEvent;
     [SerializeField] UnityEvent OnItemRemovedEvent;
 
@@ -137,7 +137,7 @@ public class Inventory : MonoBehaviour
         slots[currentIndexSlot].SetIsTarget(false);
         currentIndexSlot = index;
         slots[currentIndexSlot].SetIsTarget(true);
-        
+
         OnItemSelected?.Invoke(slots[currentIndexSlot].Item, currentIndexSlot);
         OnItemSelectedEvent.Invoke();
     }
@@ -159,6 +159,18 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(int index)
     {
         slots[index].SetItem(itemEmpty);
+    }
+
+    public void PassToNextSlot()
+    {
+        for (int i = 0; i < slots.Count; i++)
+        {
+            if (slots[i].Item != itemEmpty)
+            {
+                SelectItem(i);
+                return;
+            }
+        }
     }
 
     public WeaponUsage GetWeaponForItem(int slotIndex)
