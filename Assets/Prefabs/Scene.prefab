@@ -8918,10 +8918,6 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: 9d20af77434456a4ea6aa1ff9e7efcb0, type: 2}
-    - target: {fileID: 7322755105576937883, guid: 6848db938cbfd3b40a859ce815c216ed, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 279
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
