@@ -103,9 +103,11 @@ public class WaveManager : MonoBehaviour
             _particleSystemChest = null;
         }
         Transform transformChest = null;
+        Treasure treasure = null;
         if (currentSpawnPointIndex == 0)
         {
             transformChest = chest0Transform;
+            treasure = chest0Transform.gameObject.GetComponent<Treasure>();
         }
         else if (currentSpawnPointIndex == 1)
         {
@@ -116,7 +118,7 @@ public class WaveManager : MonoBehaviour
             transformChest = chest2Transform;
         }
 
-        if (transformChest != null)
+        if (transformChest != null && treasure != null)
         {
             _particleSystemChest = Instantiate(_particleSystemChestPrefab, transformChest.position, Quaternion.identity);
         }

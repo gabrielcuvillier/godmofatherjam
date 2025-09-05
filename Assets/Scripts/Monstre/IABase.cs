@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Health))]
@@ -49,6 +50,8 @@ public class IABase : MonoBehaviour
     [SerializeField] private float movementSpeedWater;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float attackDamage;
+    [SerializeField] private float durationShakeOnAttack = 0.25f;
+    [SerializeField] private float strengthShakeOnAttack = 2f;
 
     private float attackCooldown;
     private float attackTimer;
@@ -209,6 +212,7 @@ public class IABase : MonoBehaviour
             // Jouer l'attaque
             //Debug.Log($"{gameObject.name} attacks {target.name} for {attackDamage} damage.");
             targetHealth?.TakeDamage(attackDamage);
+            targetHealth.transform.DOShakeRotation(durationShakeOnAttack, strengthShakeOnAttack);
 
         }
         else
