@@ -39,6 +39,9 @@ public class ParasolWeapon : WeaponUsage
         while (timer < lifetime)
         {
             transform.position += direction * speed * Time.deltaTime;
+            Vector3 rotationVector = transform.eulerAngles;
+            rotationVector.x = transform.localEulerAngles.x + Time.deltaTime * _speedRotation;
+            transform.localEulerAngles = rotationVector;
             yield return null;
             timer += Time.deltaTime;
         }

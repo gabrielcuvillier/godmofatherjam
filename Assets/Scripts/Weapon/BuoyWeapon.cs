@@ -30,6 +30,7 @@ public class BuoyWeapon : WeaponUsage
 
     public override void Use()
     {
+        _isThrown = true;
         transform.parent = null;
         Vector3 direction = _parent.transform.forward;
         _coroutineMove = StartCoroutine(Move(direction));
@@ -41,6 +42,9 @@ public class BuoyWeapon : WeaponUsage
         while (timer < lifetime)
         {
             transform.position += direction * speed * Time.deltaTime;
+            Vector3 rotationVector = transform.eulerAngles;
+            rotationVector.y = transform.eulerAngles.y + Time.deltaTime * _speedRotation;
+            transform.eulerAngles = rotationVector;
             yield return null;
             timer += Time.deltaTime;
         }
@@ -60,6 +64,9 @@ public class BuoyWeapon : WeaponUsage
             {
                 transform.position += forward * speed * Time.deltaTime;
             }
+            Vector3 rotationVector = transform.localEulerAngles;
+            rotationVector.y = transform.localEulerAngles.y + Time.deltaTime * _speedRotation;
+            transform.localEulerAngles = rotationVector;
 
             yield return null;
             timer += Time.deltaTime;
