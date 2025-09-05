@@ -117,8 +117,8 @@ MonoBehaviour:
   target: {fileID: 0}
   movementLoopClip: {fileID: 0}
   hitClip: {fileID: 0}
-  maxDistanceForSound: 0
-  spatialBlendForSound: 1
+  maxDistanceForSound: 40
+  spatialBlendForSound: 0.5
   currentState: 0
   attackRange: 10
   movementSpeedSand: 2
