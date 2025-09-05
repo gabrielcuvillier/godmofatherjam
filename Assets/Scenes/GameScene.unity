@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 6544868961656576237, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6825418257536087516, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.59
@@ -243,22 +247,6 @@ PrefabInstance:
     - target: {fileID: 3773852709123070961, guid: 5aafd3b7d54ced849a0e224f80da3f56, type: 3}
       propertyPath: m_Name
       value: AudioEnvironment
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594481874460997118, guid: 5aafd3b7d54ced849a0e224f80da3f56, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594481874460997118, guid: 5aafd3b7d54ced849a0e224f80da3f56, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 44.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5777683371443628599, guid: 5aafd3b7d54ced849a0e224f80da3f56, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5777683371443628599, guid: 5aafd3b7d54ced849a0e224f80da3f56, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 40.7
       objectReference: {fileID: 0}
     - target: {fileID: 6134875704267821650, guid: 5aafd3b7d54ced849a0e224f80da3f56, type: 3}
       propertyPath: m_LocalPosition.x
