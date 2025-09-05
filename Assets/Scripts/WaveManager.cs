@@ -67,7 +67,7 @@ public class WaveManager : MonoBehaviour
     {
         if (waveUIText != null)
         {
-            waveUIText.text = $"{currentWave}";
+            waveUIText.text = $"{currentWave + 1}";
         }
     }
 
