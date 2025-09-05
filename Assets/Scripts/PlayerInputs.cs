@@ -17,6 +17,8 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] Vector2 _cameraRotationSpeed = new Vector2(30f, 30f);
     public event Action OnAttack;
 
+    [SerializeField] float maxRotation = 80f;
+
     private void OnEnable()
     {
         _actions = new PlayerInputsActions();
@@ -44,6 +46,10 @@ public class PlayerInputs : MonoBehaviour
     private void Update()
     {
         UpdatePosition();
+    }
+
+    private void LateUpdate()
+    {
         UpdateRotation();
     }
 
@@ -54,7 +60,17 @@ public class PlayerInputs : MonoBehaviour
         Vector3 cameraVerticalRotation = new Vector3(-mouseDirection.y, 0, 0);
         Vector3 cameraHorizontalRotation = new Vector3(0, mouseDirection.x, 0);
         transform.localEulerAngles += cameraHorizontalRotation * _cameraRotationSpeed.x * Time.deltaTime;
-        _camera.transform.localEulerAngles += cameraVerticalRotation * _cameraRotationSpeed.y * Time.deltaTime;
+        Vector3 rotationCamera = cameraVerticalRotation * _cameraRotationSpeed.y * Time.deltaTime;
+        float cameraRotation = _camera.transform.localEulerAngles.x + rotationCamera.x;
+        if (cameraRotation >  maxRotation && cameraRotation < 180)
+        {
+            cameraRotation = maxRotation;
+        } else if (cameraRotation < (360 - maxRotation) && cameraRotation >= 180)
+        {
+            cameraRotation = 360 - maxRotation;
+        }
+        rotationCamera.x = cameraRotation;
+        _camera.transform.localEulerAngles = rotationCamera;
     }
 
     void UpdatePosition()
