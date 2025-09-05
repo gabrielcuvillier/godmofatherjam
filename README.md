@@ -20,9 +20,9 @@ __Itch.io__: https://gabcvue.itch.io/sostreasure
 - _Game Programmers_ : Axel Brissy, Chloé Mathias
 - _Game Artists_ : Romain Oliveira, Gabrielle Araminthe
 
-_3rd party Music / Sound assets_: 
+_3rd-party Music / Sound assets_: 
 
 - Revival of Africa - Royalty Free - YouTube
-- "Seagull cry" / "Seashore waves" / "Sinnamon monkey haul" / "Sable d'Olonne ambiance" /  "Wooden cracks" - Royalty Free samples on Freesound
+- "Seagull cry" / "Seashore waves" / "Siamang monkey haul" / "Marée basse Sable d'Olonne" /  "Wooden cracks" - Royalty Free samples on Freesound
 
 Made with Unity.
