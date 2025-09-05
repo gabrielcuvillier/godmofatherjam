@@ -218,7 +218,7 @@ MonoBehaviour:
   maxDistanceForSound: 40
   spatialBlendForSound: 1
   currentState: 0
-  attackRange: 5
+  attackRange: 1.5
   movementSpeedSand: 3
   movementSpeedWater: 1
   attackSpeed: 1
