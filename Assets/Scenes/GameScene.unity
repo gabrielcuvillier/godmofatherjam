@@ -447,6 +447,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 7777789966770154702, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: _cameraRotationSpeed.x
+      value: 190
+      objectReference: {fileID: 0}
+    - target: {fileID: 7777789966770154702, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
+      propertyPath: _cameraRotationSpeed.y
+      value: 190
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
