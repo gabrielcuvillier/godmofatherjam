@@ -6,6 +6,8 @@ Defend the treasure chests from a sea monster’s plank invasion on a small isla
 
 __Itch.io__: https://gabcvue.itch.io/sostreasure
 
+CC BY-NC-SA
+
 # Screenshots
 
 ![C4.png](screenshots/C4.png)
