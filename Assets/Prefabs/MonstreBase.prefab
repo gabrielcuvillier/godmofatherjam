@@ -83,6 +83,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IABase
   target: {fileID: 0}
+  movementLoopClip: {fileID: 8300000, guid: a653246224ad0b149a7c8309117352fd, type: 3}
+  hitClip: {fileID: 8300000, guid: 04841cd4154468844b23d61cee01da46, type: 3}
+  maxDistanceForSound: 40
+  spatialBlendForSound: 0.5
   currentState: 0
   attackRange: 5
   movementSpeedSand: 3

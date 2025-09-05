@@ -29,6 +29,8 @@ public class IABase : MonoBehaviour
     [SerializeField] private AudioClip movementLoopClip;
     [Tooltip("Son joué quand l'ennemi se fait toucher")]
     [SerializeField] private AudioClip hitClip;
+    [SerializeField] private float maxDistanceForSound;
+    [SerializeField] private float spatialBlendForSound = 1f;
 
     private AudioSource movementSource;
     private AudioSource sfxSource;
@@ -70,12 +72,17 @@ public class IABase : MonoBehaviour
         movementSource.playOnAwake = false;
         movementSource.loop = true;
         movementSource.clip = movementLoopClip;
-        movementSource.spatialBlend = 1f;
+        movementSource.spatialBlend = spatialBlendForSound;
+        movementSource.maxDistance = maxDistanceForSound;
+        movementSource.rolloffMode = AudioRolloffMode.Linear;
 
         sfxSource = gameObject.AddComponent<AudioSource>();
         sfxSource.playOnAwake = false;
         sfxSource.loop = false;
-        sfxSource.spatialBlend = 1f;
+        sfxSource.clip = hitClip;
+        sfxSource.spatialBlend = spatialBlendForSound;
+        sfxSource.maxDistance = maxDistanceForSound;
+        sfxSource.rolloffMode = AudioRolloffMode.Linear;
     }
 
     private void Start()

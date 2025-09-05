@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 1744905284291361265}
   - component: {fileID: 4086426482285862319}
   - component: {fileID: 8406979214368463290}
+  - component: {fileID: 2660740863732906163}
   m_Layer: 0
   m_Name: MonstreRequin
   m_TagString: Enemy
@@ -114,6 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IABase
   target: {fileID: 0}
+  movementLoopClip: {fileID: 0}
+  hitClip: {fileID: 0}
+  maxDistanceForSound: 40
+  spatialBlendForSound: 0.5
   currentState: 0
   attackRange: 10
   movementSpeedSand: 2
@@ -135,7 +140,19 @@ MonoBehaviour:
   _maxHealth: 10
   _onHealthChangeEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -775403488774194454}
+        m_TargetAssemblyTypeName: IABase, Assembly-CSharp
+        m_MethodName: Hit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDeathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -199,6 +216,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.92, y: 1.77, z: 0.045749664}
   m_Center: {x: -0, y: 0.9, z: -0.02}
+--- !u!95 &2660740863732906163
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596253740001129157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3769f23321b21f74a8afbfd6ffaa03e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5239288661112637003
 PrefabInstance:
   m_ObjectHideFlags: 0
