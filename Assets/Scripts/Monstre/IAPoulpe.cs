@@ -231,6 +231,8 @@ public class IAPoulpe : MonoBehaviour
         if (bulletPrefab != null && shotPoint != null && target != null)
         {
             Vector3 direction = GetDirectionToTarget();
+            float distanceToTarget = Vector3.Distance(shotPoint.position, target.position);
+            Debug.DrawLine(shotPoint.position, shotPoint.position + direction * distanceToTarget, Color.blue, 2f);
             if (direction == Vector3.zero) return;
             GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, Quaternion.LookRotation(direction));
             BulletController bulletController = bullet.GetComponent<BulletController>();
@@ -259,7 +261,10 @@ public class IAPoulpe : MonoBehaviour
     {
         if (target != null)
         {
-            return (target.position - transform.position).normalized;
+            Vector3 direction = (target.position - transform.position).normalized;
+            // mettre un peut plus bas pour viser le corps
+            direction.y -= 0.05f;
+            return direction;
         }
         return Vector3.zero;
     }
