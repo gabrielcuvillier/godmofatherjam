@@ -29,6 +29,7 @@ public class WeaponManager : MonoBehaviour
             _inventory.RemoveItem(_currentSlotIndex);
             _currentWeapon = null;
             OnAttackEvent.Invoke();
+            _inventory.PassToNextSlot();
         }
     }
 
@@ -42,7 +43,8 @@ public class WeaponManager : MonoBehaviour
             newWeapon.gameObject.SetActive(true);
             newWeapon.Select();
             _currentWeapon = newWeapon;
-        } else
+        }
+        else
         {
             _currentWeapon = null;
         }
