@@ -51,6 +51,7 @@ MonoBehaviour:
   damage: 50
   speed: 20
   lifetime: 30
+  _speedRotation: 100
 --- !u!1001 &2515234732193368008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,19 +86,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a43d8dd246df213429f2c7b0070caa1b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.6934114
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a43d8dd246df213429f2c7b0070caa1b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.1384943
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a43d8dd246df213429f2c7b0070caa1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.6934114
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a43d8dd246df213429f2c7b0070caa1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.1384943
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a43d8dd246df213429f2c7b0070caa1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -109,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a43d8dd246df213429f2c7b0070caa1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 22.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a43d8dd246df213429f2c7b0070caa1b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -206,5 +207,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 96
   m_CollisionDetection: 0

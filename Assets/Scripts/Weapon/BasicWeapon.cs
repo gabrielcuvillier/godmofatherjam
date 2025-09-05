@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class BasicWeapon : WeaponUsage
@@ -32,9 +33,13 @@ public class BasicWeapon : WeaponUsage
     private IEnumerator Move(Vector3 direction)
     {
         float timer = 0f;
+
+        Vector3 randomRotation = RandomVector();
+
         while (timer < lifetime)
         {
             transform.position += direction * speed * Time.deltaTime;
+            transform.eulerAngles += randomRotation * Time.deltaTime * _speedRotation;
             yield return null;
             timer += Time.deltaTime;
         }
