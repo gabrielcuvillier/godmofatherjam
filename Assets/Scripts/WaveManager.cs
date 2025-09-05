@@ -30,6 +30,7 @@ public class WaveManager : MonoBehaviour
 
     [Header("Ref UI")]
     [SerializeField] private TextMeshProUGUI waveUIText;
+    [SerializeField] private TextMeshProUGUI waveUITextInGameOver;
 
     [Header("Targets")]
     [SerializeField] private Transform playerTransform;
@@ -68,6 +69,7 @@ public class WaveManager : MonoBehaviour
         if (waveUIText != null)
         {
             waveUIText.text = $"{currentWave + 1}";
+            waveUITextInGameOver.text = $"{currentWave + 1}";
         }
     }
 
