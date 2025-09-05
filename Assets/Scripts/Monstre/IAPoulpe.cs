@@ -231,6 +231,7 @@ public class IAPoulpe : MonoBehaviour
         if (bulletPrefab != null && shotPoint != null && target != null)
         {
             Vector3 direction = GetDirectionToTarget();
+            Debug.DrawLine(shotPoint.position, shotPoint.position + direction * 10f, Color.blue, 2f);
             if (direction == Vector3.zero) return;
             GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, Quaternion.LookRotation(direction));
             BulletController bulletController = bullet.GetComponent<BulletController>();

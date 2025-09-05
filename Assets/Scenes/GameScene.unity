@@ -447,14 +447,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene
       objectReference: {fileID: 0}
-    - target: {fileID: 7398153450617597012, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: aa03b8d6812f34643a6d5531ad677b6a, type: 2}
-    - target: {fileID: 8548410800418847550, guid: d0ca4f29bc155ff4f971c4ee965e6afb, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0dbffad6222e6d0479687193d7dda7f0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
