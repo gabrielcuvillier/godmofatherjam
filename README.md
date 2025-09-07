@@ -1,6 +1,6 @@
 # SOS Treasure 
 
-Game submitted for the Godmofather Game Jam 2025 at IIM Digital School.
+Game submitted for the Godmofather Jam 2025, a 3-days Game Jam organized at IIM Digital School.
 
 Defend the treasure chests from a sea monster’s plank invasion on a small island, using whatever you can scavenge from the beach!
 
