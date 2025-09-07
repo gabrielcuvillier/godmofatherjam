@@ -6,6 +6,8 @@ Defend the treasure chests from a sea monster’s plank invasion on a small isla
 
 __Itch.io__: https://gabcvue.itch.io/sostreasure
 
+NB: we had the constraint to not use the 'Z' or 'W' keyboard key. So to move forward, use the right click button instead!
+
 # Screenshots
 
 ![C4.png](screenshots/C4.png)
